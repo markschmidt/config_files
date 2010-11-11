@@ -1,0 +1,26 @@
+[user]
+        name = Mark Schmidt
+        email = mark.schmidt@xing.com
+[color]
+        status = auto
+        diff = auto
+        branch = auto
+[merge]
+        tool = opendiff
+        tool = mate
+[core]
+        excludesfile = ~/.gitignore
+        editor = mate -w
+[apply]
+        whitespace = nowarn
+[alias]
+        ci = commit
+        co = checkout
+        st = status
+        br = branch
+        cp = cherry-pick
+        sm = submodule
+        lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset %Cred[%an]%Cred' --abbrev-commit --date=relative
+
+[git-tmbundle]
+        gitx-path = /usr/bin/gitx
