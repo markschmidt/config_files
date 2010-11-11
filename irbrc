@@ -1,8 +1,12 @@
 require 'rubygems'
-require 'wirble'
 require "pp"
-Wirble.init
-Wirble.colorize
+begin
+  require 'wirble'
+  Wirble.init
+  Wirble.colorize
+rescue LoadError
+  puts "could not load wirble. skipping..."
+end
 
 # Prompt behavior
 ARGV.concat [ "--readline", "--prompt-mode", "simple" ]
