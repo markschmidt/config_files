@@ -16,7 +16,8 @@ function parse_git_branch {
 export PS1='\[\033[01;32m\]\u\[\033[01;34m\]:\w\[\033[31m\] $(parse_git_branch)\[\033[01;34m\]$\[\033[00m\] '
 
 alias cdr='cd /Users/mark.schmidt/code/rails-app && eval `bin/xing_env`'
-alias cds='cd /Users/mark.schmidt/code/dynamic-seo-directory && PATH=/Users/mark.schmidt/Downloads/redis-2.0.2:$PATH'
+alias cdp='cd /Users/mark.schmidt/code/people_directory && PATH=/Users/mark.schmidt/Downloads/redis-2.0.2:$PATH'
+alias m=mate
 
 tag() { alias $1="cd $PWD"; }
 ptag() { alias $1="cd $PWD"; echo "alias $1=\"cd $PWD\"" >> ~/.bash_aliases; }
