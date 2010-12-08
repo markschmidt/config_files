@@ -1,5 +1,5 @@
 #!/bin/bash
-for file in bash_profile bashrc gitconfig irbrc vimrc
+for file in bash_profile bashrc gitconfig irbrc vimrc gemrc
 do
   if [ -f $HOME/.$file ]
     then
