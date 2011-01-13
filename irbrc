@@ -41,7 +41,7 @@ end
 
 # Prompts
 IRB.conf[:PROMPT][:CUSTOM] = {
-    :PROMPT_N => ">> ",
+    :PROMPT_N => " > ",
     :PROMPT_I => ">> ",
     :PROMPT_S => nil,
     :PROMPT_C => " > ",
@@ -50,6 +50,9 @@ IRB.conf[:PROMPT][:CUSTOM] = {
 
 # Set default prompt
 IRB.conf[:PROMPT_MODE] = :CUSTOM
+
+# auto tabbing
+IRB.conf[:AUTO_INDENT]=true
 
 
 # Simple ri integration
