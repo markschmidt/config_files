@@ -1,20 +1,24 @@
 require 'rubygems'
 require "pp"
-begin
-  require 'wirble'
-  Wirble.init
-  Wirble.colorize
+
+
+def save_require(name)
+  require name
+  yield
 rescue LoadError
-  puts "could not load wirble. skipping..."
+  puts "could not load #{name}. skipping..."
 end
 
-begin
-  require 'json'
+
+save_require("wirble") do
+  Wirble.init
+  Wirble.colorize
+end
+
+save_require("json") do
   def json_pp(json)
     puts JSON.pretty_generate(JSON.parse(json))
   end
-rescue LoadError
-  puts "could not load json. skipping..."
 end
 
 # Prompt behavior
@@ -51,10 +55,4 @@ IRB.conf[:PROMPT_MODE] = :CUSTOM
 # Simple ri integration
 def ri(*names)
   system("ri #{names.map {|name| name.to_s}.join(" ")}")
-end
-
-
-# load a user for the 
-def some_user(user_id=1)
- @user = User.find(user_id, :rid => "internal")
 end
