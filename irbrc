@@ -8,6 +8,11 @@ rescue LoadError
   puts "could not load wirble. skipping..."
 end
 
+require 'json'
+def json_pp(json)
+  puts JSON.pretty_generate(JSON.parse(json))
+end
+
 # Prompt behavior
 ARGV.concat [ "--readline", "--prompt-mode", "simple" ]
 
