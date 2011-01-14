@@ -54,8 +54,13 @@ IRB.conf[:PROMPT_MODE] = :CUSTOM
 # auto tabbing
 IRB.conf[:AUTO_INDENT]=true
 
-
 # Simple ri integration
 def ri(*names)
   system("ri #{names.map {|name| name.to_s}.join(" ")}")
+end
+
+# copy a string to the clipboard
+def pbcopy(string)
+  `echo "#{string}" | pbcopy`
+  string
 end
