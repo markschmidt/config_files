@@ -1,0 +1,25 @@
+alias migrate="rake db:migrate db:test:prepare"
+alias gadd="git add -u && git add . && git status"
+alias g="git"
+alias gci="git commit -m"
+alias gst="git status -s"
+alias gaci="gadd && gci"
+
+alias m=mate
+
+os_type=`uname`
+
+# Darwin doesn't support --color attribute
+if [ "$os_type" != Darwin ]; then
+  ls_options="--color=auto"
+fi
+
+export CLICOLOR=true
+alias l="ls -CFlhG $ls_options"
+alias ll="ls -lG $ls_options"
+alias la="ls -alhG $ls_options"
+
+
+# work-stuff
+alias cdr="cd $HOME/code/rails-app && eval `bin/xing_env`"
+alias cdp="cd $HOME/code/people_directory && PATH=/Users/mark.schmidt/Downloads/redis-2.0.2:$PATH"

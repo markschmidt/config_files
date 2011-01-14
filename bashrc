@@ -15,9 +15,9 @@ function parse_git_branch {
 }
 export PS1='\[\033[01;32m\]\u\[\033[01;34m\]:\w\[\033[31m\] $(parse_git_branch)\[\033[01;34m\]$\[\033[00m\] '
 
-alias cdr='cd /Users/mark.schmidt/code/rails-app && eval `bin/xing_env`'
-alias cdp='cd /Users/mark.schmidt/code/people_directory && PATH=/Users/mark.schmidt/Downloads/redis-2.0.2:$PATH'
-alias m=mate
+# local aliases
+if [ -f $HOME/.aliases ]; then source $HOME/.aliases; fi
+
 
 tag() { alias $1="cd $PWD"; }
 ptag() { alias $1="cd $PWD"; echo "alias $1=\"cd $PWD\"" >> ~/.bash_aliases; }
@@ -36,5 +36,5 @@ export HISTSIZE=10000
 shopt -s histappend
 
 
-if [[ -s /Users/mark.schmidt/.rvm/scripts/rvm ]] ; then source /Users/mark.schmidt/.rvm/scripts/rvm ; fi
+if [[ -s $HOME/.rvm/scripts/rvm ]] ; then source $HOME/.rvm/scripts/rvm ; fi
 if [[ -r $rvm_path/scripts/completion ]] ; then source $rvm_path/scripts/completion ; fi
