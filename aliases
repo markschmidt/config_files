@@ -21,5 +21,7 @@ alias la="ls -alhG $ls_options"
 
 
 # work-stuff
-alias cdr="cd $HOME/code/rails-app && eval `bin/xing_env`"
-alias cdp="cd $HOME/code/people_directory && PATH=/Users/mark.schmidt/Downloads/redis-2.0.2:$PATH"
+alias cdr='cd $HOME/code/rails-app && eval `bin/xing_env`'
+alias cdp='cd $HOME/code/people_directory && PATH=/Users/mark.schmidt/Downloads/redis-2.0.2:$PATH'
+
+alias production_logs='./bin/fetch_logs -e production | ./bin/unshuffle_logs -c '
