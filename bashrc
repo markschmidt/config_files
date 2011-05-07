@@ -25,7 +25,7 @@ ptag() { alias $1="cd $PWD"; echo "alias $1=\"cd $PWD\"" >> ~/.bash_aliases; }
 export PATH=/opt/local/bin:$PATH
 export PATH=/usr/local/mysql/bin:$PATH
 export PATH=/usr/local/ruby187pl300patched/bin:$PATH
-export PATH=$HOME/bin:$PATH
+export PATH=$HOME/.bin:$PATH
 
 export EVENT_NOKQUEUE=1
 export ARCHFLAGS="-arch x86_64"
