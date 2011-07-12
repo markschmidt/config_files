@@ -15,6 +15,12 @@ function parse_git_branch {
 }
 export PS1='\[\033[01;32m\]\u\[\033[01;34m\]:\w\[\033[31m\] $(parse_git_branch)\[\033[01;34m\]$\[\033[00m\] '
 
+push_this_to_remote() {
+  current_branch=`git br | grep "*" | awk '{print $2}'`
+  git push rails-app-features $current_branch
+  git br --set-upstream $current_branch rails-app-features/$current_branch
+}
+
 # local aliases
 if [ -f $HOME/.aliases ]; then source $HOME/.aliases; fi
 
