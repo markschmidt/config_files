@@ -7,6 +7,11 @@ if [ -f /opt/local/etc/bash_completion ]; then
     . /opt/local/etc/bash_completion.d/git
 fi
 
+# Brew Bash shell command completion
+if [ -d /usr/local/etc/bash_completion.d ]; then
+    . /usr/local/etc/bash_completion.d/git-completion.bash
+fi
+
 function parse_git_dirty {
   [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]] && echo "*"
 }
