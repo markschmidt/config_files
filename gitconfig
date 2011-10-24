@@ -1,6 +1,6 @@
 [user]
         name = Mark Schmidt
-        email = mark.schmidt@gmx.de
+        email = mark.schmidt@xing.com
 [color]
         status = auto
         diff = auto
@@ -21,6 +21,8 @@
         cp = cherry-pick
         sm = submodule
         lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset %Cred[%an]%Cred' --abbrev-commit --date=relative
+        up = !sh -c 'git pull --rebase --prune && git log --pretty=format:\"%Cred%ae %Creset- %C(yellow)%s %Creset(%ar)\" HEAD@{1}..'
+        ll = log ORIG_HEAD..HEAD --pretty=oneline
 
 [git-tmbundle]
         gitx-path = /usr/bin/gitx
