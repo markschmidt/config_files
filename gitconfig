@@ -23,6 +23,7 @@
         lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset %Cred[%an]%Cred' --abbrev-commit --date=relative
         up = !sh -c 'git pull --rebase --prune && git log --pretty=format:\"%Cred%ae %Creset- %C(yellow)%s %Creset(%ar)\" HEAD@{1}..'
         ll = log ORIG_HEAD..HEAD --pretty=oneline
+        my = log --author=mark.schmidt
 
 [git-tmbundle]
         gitx-path = /usr/bin/gitx
