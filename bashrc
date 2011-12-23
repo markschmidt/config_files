@@ -22,8 +22,8 @@ export PS1='\[\033[01;32m\]\u\[\033[01;34m\]:\w\[\033[31m\] $(parse_git_branch)\
 
 push_this_to_remote() {
   current_branch=`git br | grep "*" | awk '{print $2}'`
-  git push rails-app-features $current_branch
-  git br --set-upstream $current_branch rails-app-features/$current_branch
+  git push xws-features $current_branch
+  git br --set-upstream $current_branch xws-features/$current_branch
 }
 
 push_repo_to_remote() {
