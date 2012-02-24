@@ -47,6 +47,8 @@ export PATH=/usr/local/mysql/bin:$PATH
 export PATH=/usr/local/ruby187pl357patched/bin:$PATH
 export PATH=$HOME/.bin:$PATH
 
+export EDITOR='subl -w'
+
 export EVENT_NOKQUEUE=1
 export ARCHFLAGS="-arch x86_64"
 export CLICOLOR=1

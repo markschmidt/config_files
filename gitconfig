@@ -10,7 +10,7 @@
         tool = mate
 [core]
         excludesfile = ~/.gitignore
-        editor = mate -w
+        editor = subl -w
 [apply]
         whitespace = nowarn
 [alias]
