@@ -17,6 +17,10 @@
         ci = commit
         co = checkout
         st = status
+        di = diff
+        dc = diff --cached
+        amend = commit --amend
+        aa = add --all
         br = branch
         cp = cherry-pick
         sm = submodule
