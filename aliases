@@ -19,6 +19,8 @@ alias l="ls -CFlhG $ls_options"
 alias ll="ls -lG $ls_options"
 alias la="ls -alhG $ls_options"
 
+alias duply_backup="cd && tar -cz .duply | gpg -c --output ~/Dropbox/backups/duply_config.tgz.gpg"
+
 
 # work-stuff
 alias cdr='cd $HOME/code/rails-app && eval `bin/xing_env`'
