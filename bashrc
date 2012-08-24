@@ -44,6 +44,7 @@ ptag() { alias $1="cd $PWD"; echo "alias $1=\"cd $PWD\"" >> ~/.bash_aliases; }
 
 export PATH=/opt/local/bin:$PATH
 export PATH=/usr/local/mysql/bin:$PATH
+export PATH=/Users/mark.schmidt/.gem/ruby/1.8/bin:$PATH
 export PATH=/usr/local/ruby187pl357patched/bin:$PATH
 export PATH=$HOME/.bin:$PATH
 
@@ -54,6 +55,7 @@ export ARCHFLAGS="-arch x86_64"
 export CLICOLOR=1
 
 export PANDORA_HEADLESS_MODE=true
+export ENGINES=web_service,web_service_ext,core_tools,xws,push_service
 
 # hacks from http://blog.macromates.com/2008/working-with-history-in-bash/
 export HISTCONTROL=erasedups
