@@ -5,10 +5,6 @@ alias gci="git commit -m"
 alias gst="git status -s"
 alias gaci="gadd && gci"
 
-alias m=mate
-
-alias rwst="rake web_service:test"
-
 os_type=`uname`
 
 # Darwin doesn't support --color attribute
@@ -23,9 +19,13 @@ alias la="ls -alhG $ls_options"
 
 alias duply_backup="cd && tar -cz .duply | gpg -c --output ~/Dropbox/backups/duply_config.tgz.gpg"
 
+alias edit_config="subl ~/.config_files"
+
 
 # work-stuff
 alias cdr='cd $HOME/code/rails-app && eval `bin/xing_env` && export GEM_HOME=$HOME/.gem/ruby/1.8'
 alias cdp='cd $HOME/code/people_directory && PATH=/Users/mark.schmidt/Downloads/redis-2.0.2:$PATH'
 
 alias production_logs='./bin/fetch_logs -e production | ./bin/unshuffle_logs -c '
+
+alias rwst="rake web_service:test"
