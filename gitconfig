@@ -29,6 +29,7 @@
         ll = log ORIG_HEAD..HEAD --pretty=oneline
         my = log --author=mark.schmidt
         su = submodule update
+        latest = for-each-ref --sort=-committerdate --format='%(committerdate:relative) %(refname:short)'
 
 [git-tmbundle]
         gitx-path = /usr/bin/gitx

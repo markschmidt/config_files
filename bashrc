@@ -26,6 +26,14 @@ push_this_to_remote() {
   git br --set-upstream $current_branch xws-features/$current_branch
 }
 
+function checkout_remote_branch {
+  branch_name=$1
+  echo "checking out: $branch_name"
+  git fetch xws-features &&
+  git br --track $branch_name xws-features/$branch_name &&
+  git co $branch_name
+}
+
 push_repo_to_remote() {
   folder_name=${PWD##*/}
   if [ ! -e .git ]; then echo "$folder_name is not a git repository"; fi
@@ -55,7 +63,7 @@ export ARCHFLAGS="-arch x86_64"
 export CLICOLOR=1
 
 export PANDORA_HEADLESS_MODE=true
-export ENGINES=web_service,web_service_ext,core_tools,xws,push_service
+export ENGINES=web_service,core_tools,xws
 
 # hacks from http://blog.macromates.com/2008/working-with-history-in-bash/
 export HISTCONTROL=erasedups

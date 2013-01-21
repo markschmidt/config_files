@@ -5,6 +5,9 @@ alias gci="git commit -m"
 alias gst="git status -s"
 alias gaci="gadd && gci"
 
+alias bi="bundle install"
+alias bo="bundle open"
+
 os_type=`uname`
 
 # Darwin doesn't support --color attribute
@@ -30,3 +33,4 @@ alias cdp='cd $HOME/code/people_directory && PATH=/Users/mark.schmidt/Downloads/
 alias production_logs='./bin/fetch_logs -e production | ./bin/unshuffle_logs -c '
 
 alias rwst="rake web_service:test"
+alias rxt="rake xws:test"
