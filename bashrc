@@ -22,15 +22,15 @@ export PS1='\[\033[01;32m\]\u\[\033[01;34m\]:\w\[\033[31m\] $(parse_git_branch)\
 
 push_this_to_remote() {
   current_branch=`git br | grep "*" | awk '{print $2}'`
-  git push xws-features $current_branch
-  git br --set-upstream $current_branch xws-features/$current_branch
+  git push xws $current_branch
+  git br --set-upstream $current_branch xws/$current_branch
 }
 
 function checkout_remote_branch {
   branch_name=$1
   echo "checking out: $branch_name"
-  git fetch xws-features &&
-  git br --track $branch_name xws-features/$branch_name &&
+  git fetch xws &&
+  git br --track $branch_name xws/$branch_name &&
   git co $branch_name
 }
 
