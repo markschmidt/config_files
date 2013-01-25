@@ -62,9 +62,6 @@ export EVENT_NOKQUEUE=1
 export ARCHFLAGS="-arch x86_64"
 export CLICOLOR=1
 
-export PANDORA_HEADLESS_MODE=true
-export ENGINES=web_service,core_tools,xws
-
 # hacks from http://blog.macromates.com/2008/working-with-history-in-bash/
 export HISTCONTROL=erasedups
 export HISTSIZE=10000
