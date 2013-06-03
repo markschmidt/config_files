@@ -28,6 +28,7 @@ alias edit_subl_packages="subl ~/Library/Application\ Support/Sublime\ Text\ 2/P
 
 # work-stuff
 alias cdm='cd $HOME/code/xws && eval `bin/xing_env` && export GEM_HOME=$HOME/.gem/ruby/1.8'
+alias cdr='cd $HOME/code/rails-app && eval `bin/xing_env` && export GEM_HOME=$HOME/.gem/ruby/1.8'
 alias cdp='cd $HOME/code/people_directory && PATH=/Users/mark.schmidt/Downloads/redis-2.0.2:$PATH'
 
 alias rwst="rake web_service:test"
