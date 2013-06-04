@@ -4,37 +4,16 @@ config nudgePercentOf screenSize
 config resizePercentOf screenSize
 config secondsBetweenRepeat 0.1
 config checkDefaultsOnLoad true
-#config focusCheckWidthMax 3000
 config windowHintsShowIcons true
 config windowHintsIgnoreHiddenWindows false
-#config windowHintsDuration 5
 config windowHintsSpread true
-#config windowHintsOrder persist
-
-# Monitor Aliases
-alias mon-laptop     1
-alias mon-extern     0
-
-# Misc Aliases
-alias showHintsLeftHand hint AOEUIYQJKX
-alias showNormalHint hint AOEUIDHTNSYXFBPKGMCW
 
 # Abstract positions
 alias full          move screenOriginX;screenOriginY                  screenSizeX;screenSizeY
 alias lefthalf      move screenOriginX;screenOriginY                  screenSizeX/2;screenSizeY
 alias righthalf     move screenOriginX+screenSizeX/2;screenOriginY    screenSizeX/2;screenSizeY
-alias rightmost     move screenOriginX+screenSizeX*0.4;screenOriginY  screenSizeX*0.6;screenSizeY
-alias rightless     move screenOriginX+screenSizeX*0.6;screenOriginY  screenSizeX*0.4;screenSizeY
-alias leftmost      move screenOriginX;screenOriginY                  screenSizeX*0.6;screenSizeY
-alias leftless      move screenOriginX;screenOriginY                  screenSizeX*0.4;screenSizeY
-# Concrete positions
-alias 1-full        move screenOriginX;screenOriginY screenSizeX;screenSizeY         ${mon-laptop}
-alias 1-left        move screenOriginX;screenOriginY screenSizeX/2;screenSizeY         ${mon-laptop}
-alias 1-right       move screenOriginX+screenSizeX/2;screenOriginY screenSizeX/2;screenSizeY         ${mon-laptop}
-alias 2-left        move screenOriginX;screenOriginY screenSizeX/2;screenSizeY         ${mon-extern}
-alias 2-right       move screenOriginX+screenSizeX/2;screenOriginY screenSizeX/2;screenSizeY         ${mon-extern}
-alias 2-righttop    move screenOriginX+screenSizeX/2;screenOriginY screenSizeX/2;screenSizeY/2       ${mon-extern}
-alias 2-rightbottom move screenOriginX+screenSizeX/2;screenOriginY+screenSizeY/2    screenSizeX/2;screenSizeY/2       ${mon-extern}
+alias tophalf       move screenOriginX;screenOriginY                  screenSizeX;screenSizeY/2
+alias bottomhalf    move screenOriginX;screenOriginY+screenSizeY/2    screenSizeX;screenSizeY/2
 
 # Shortcut for getting into modal mode
 alias modal-combo   shift;cmd;m
@@ -42,12 +21,17 @@ alias modal-combo   shift;cmd;m
 bind m:${modal-combo}           ${full}
 bind left:${modal-combo}        ${lefthalf}
 bind right:${modal-combo}       ${righthalf}
+bind up:${modal-combo}          ${tophalf}
+bind down:${modal-combo}        ${bottomhalf}
 
 bind 1:${modal-combo}           throw 0 resize
 bind 2:${modal-combo}           throw 1 resize
 
 
-bind esc:cmd  ${showNormalHint}
+bind esc:cmd  hint
+
+
+# END CONFIG
 
 # For Reference Reason the stuff from the default config
 
