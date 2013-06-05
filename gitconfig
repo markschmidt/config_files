@@ -11,6 +11,8 @@
 [core]
         excludesfile = ~/.gitignore
         editor = subl -w
+[push]
+        default = upstream
 [apply]
         whitespace = nowarn
 [alias]
