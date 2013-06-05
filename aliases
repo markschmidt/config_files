@@ -6,6 +6,7 @@ alias gst="git status -s"
 alias gaci="gadd && gci"
 
 alias bi="bundle install"
+alias be="bundle exec "
 alias bo="bundle open"
 
 os_type=`uname`
