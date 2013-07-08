@@ -1,12 +1,3 @@
-# MacPorts Installer addition on 2010-05-03_at_13:23:32: adding an appropriate PATH variable for use with MacPorts.
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-# Finished adapting your PATH environment variable for use with MacPorts.
-
-# MacPorts Bash shell command completion
-if [ -f /opt/local/etc/bash_completion ]; then
-    . /opt/local/etc/bash_completion.d/git
-fi
-
 # Brew Bash shell command completion
 if [ -d /usr/local/etc/bash_completion.d ]; then
     . /usr/local/etc/bash_completion.d/git-completion.bash
@@ -24,14 +15,6 @@ push_this_to_remote() {
   current_branch=`git br | grep "*" | awk '{print $2}'`
   git push xws $current_branch
   git br --set-upstream $current_branch xws/$current_branch
-}
-
-function checkout_remote_branch {
-  branch_name=$1
-  echo "checking out: $branch_name"
-  git fetch xws &&
-  git br --track $branch_name xws/$branch_name &&
-  git co $branch_name
 }
 
 push_repo_to_remote() {
@@ -52,8 +35,7 @@ ptag() { alias $1="cd $PWD"; echo "alias $1=\"cd $PWD\"" >> ~/.bash_aliases; }
 
 export PATH=/opt/local/bin:$PATH
 export PATH=/usr/local/mysql/bin:$PATH
-export PATH=/Users/mark.schmidt/.gem/ruby/1.8/bin:$PATH
-export PATH=/usr/local/ruby187pl357patched/bin:$PATH
+export PATH=/usr/local/bin:$PATH
 export PATH=$HOME/.bin:$PATH
 
 export EDITOR='subl -w'
@@ -66,11 +48,5 @@ export CLICOLOR=1
 export HISTCONTROL=erasedups
 export HISTSIZE=10000
 shopt -s histappend
-
-
-#if [[ -s $HOME/.rvm/scripts/rvm ]] ; then source $HOME/.rvm/scripts/rvm ; fi
-#if [[ -r $rvm_path/scripts/completion ]] ; then source $rvm_path/scripts/completion ; fi
-
-#PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 eval "$(rbenv init -)"
