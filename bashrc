@@ -17,6 +17,13 @@ push_this_to_remote() {
   git br --set-upstream $current_branch xws/$current_branch
 }
 
+function set_ruby {
+  ruby_version=$1
+  gemset=$2
+  echo $ruby_version > .ruby-version
+  echo $gemset > .rbenv-gemsets
+}
+
 push_repo_to_remote() {
   folder_name=${PWD##*/}
   if [ ! -e .git ]; then echo "$folder_name is not a git repository"; fi
