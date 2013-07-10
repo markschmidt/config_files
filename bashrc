@@ -43,6 +43,7 @@ ptag() { alias $1="cd $PWD"; echo "alias $1=\"cd $PWD\"" >> ~/.bash_aliases; }
 export PATH=/opt/local/bin:$PATH
 export PATH=/usr/local/mysql/bin:$PATH
 export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/sbin:$PATH
 export PATH=$HOME/.bin:$PATH
 
 export EDITOR='subl -w'
