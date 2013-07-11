@@ -30,7 +30,7 @@ push_repo_to_remote() {
   ssh mark@markschmidt.net "mkdir projects/$folder_name.git && cd projects/$folder_name.git && git init --bare" &&
   git remote add origin mark@markschmidt.net:projects/$folder_name.git &&
   git push origin master &&
-  git br --set-upstream master origin/master
+  git br --track master origin/master
 }
 
 # local aliases
