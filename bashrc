@@ -33,6 +33,10 @@ push_repo_to_remote() {
   git br --track master origin/master
 }
 
+ssh-me() {
+  ssh mark.schmidt@xing.hh@$1
+}
+
 # local aliases
 if [ -f $HOME/.aliases ]; then source $HOME/.aliases; fi
 
