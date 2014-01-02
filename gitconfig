@@ -31,7 +31,7 @@
         ll = log ORIG_HEAD..HEAD --pretty=oneline
         my = log --author=mark.schmidt
         su = submodule update
-        latest = for-each-ref --sort=-committerdate --format='%(committerdate:relative) %(refname:short)'
+        latest = for-each-ref --count=10 --sort=-committerdate --format='%(committerdate:relative) %(refname:short)'
         diff-no-renames = diff --diff-filter=M
 
 [git-tmbundle]
