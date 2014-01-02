@@ -33,7 +33,11 @@ push_repo_to_remote() {
 }
 
 ssh-me() {
-  ssh mark.schmidt@xing.hh@$1
+  ssh xing-mark.schmidt@$1
+}
+
+ssh-pw() {
+  ssh -o PubkeyAuthentication=no xing-mark.schmidt@$1
 }
 
 # local aliases
