@@ -9,6 +9,8 @@ alias bi="bundle install"
 alias be="bundle exec "
 alias bo="bundle open"
 
+alias xss="xing sandbox sync"
+
 os_type=`uname`
 
 # Darwin doesn't support --color attribute
