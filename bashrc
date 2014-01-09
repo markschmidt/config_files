@@ -3,10 +3,10 @@ if [ -d /usr/local/etc/bash_completion.d ]; then
     . /usr/local/etc/bash_completion.d/git-completion.bash
 fi
 
-function parse_git_dirty {
+parse_git_dirty() {
   [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit, working directory clean" ]] && echo "*"
 }
-function parse_git_branch {
+parse_git_branch() {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/(\1$(parse_git_dirty))/"
 }
 export PS1='\[\033[01;32m\]\u\[\033[01;34m\]:\w\[\033[31m\] $(parse_git_branch)\[\033[01;34m\]$\[\033[00m\] '
@@ -17,7 +17,7 @@ push_this_to_remote() {
   git br --set-upstream $current_branch xws/$current_branch
 }
 
-function set_ruby {
+set_ruby() {
   ruby_version=$1
   gemset=$2
   echo $ruby_version > .ruby-version
