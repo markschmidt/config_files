@@ -18,10 +18,27 @@ push_this_to_remote() {
 }
 
 set_ruby() {
-  ruby_version=$1
-  gemset=$2
+  if [ -z $1 ]; then
+    ruby_version='2.1.0-railsexpress'
+    echo "ruby-version  -> $ruby_version"
+  else
+    ruby_version=$1
+  fi
+
+  if [ -z $2 ]; then
+    gemset=${PWD##*/}
+    echo "rbenv-gemsets -> $gemset"
+  else
+    gemset=$2
+  fi
+
   echo $ruby_version > .ruby-version
   echo $gemset > .rbenv-gemsets
+
+  if ! gem list | grep bundler; then
+    echo 'Installing bundler...'
+    gem install bundler
+  fi
 }
 
 push_repo_to_remote() {
