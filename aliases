@@ -33,4 +33,3 @@ alias edit_subl_packages="subl ~/Library/Application\ Support/Sublime\ Text\ 2/P
 alias cdm='cd $HOME/code/xws && eval `bin/xing_env`'
 
 alias rwst="rake web_service:test"
-alias rxt="rake xws:test"
