@@ -31,5 +31,5 @@ alias edit_subl_packages="subl ~/Library/Application\ Support/Sublime\ Text\ 2/P
 
 # work-stuff
 alias cdm='cd $HOME/code/xws && eval `bin/xing_env`'
-
 alias rwst="rake web_service:test"
+alias ssh-hk='ssh perlrelease@perl-1.hk.fra1.xing.com'
