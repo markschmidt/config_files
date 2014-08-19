@@ -19,7 +19,7 @@ push_this_to_remote() {
 
 set_ruby() {
   if [ -z $1 ]; then
-    ruby_version='2.1.0-railsexpress'
+    ruby_version='2.1.2-railsexpress'
     echo "ruby-version  -> $ruby_version"
   else
     ruby_version=$1
