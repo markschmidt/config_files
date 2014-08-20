@@ -1,8 +1,3 @@
-# Brew Bash shell command completion
-if [ -d /usr/local/etc/bash_completion.d ]; then
-    . /usr/local/etc/bash_completion.d/git-completion.bash
-fi
-
 parse_git_dirty() {
   [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit, working directory clean" ]] && echo "*"
 }
@@ -80,5 +75,10 @@ export CLICOLOR=1
 export HISTCONTROL=erasedups
 export HISTSIZE=10000
 shopt -s histappend
+
+# Brew Bash shell command completion
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+    . $(brew --prefix)/etc/bash_completion
+fi
 
 eval "$(rbenv init -)"
