@@ -6,12 +6,6 @@ parse_git_branch() {
 }
 export PS1='\[\033[01;32m\]\u\[\033[01;34m\]:\w\[\033[31m\] $(parse_git_branch)\[\033[01;34m\]$\[\033[00m\] '
 
-push_this_to_remote() {
-  current_branch=`git br | grep "*" | awk '{print $2}'`
-  git push xws $current_branch
-  git br --set-upstream $current_branch xws/$current_branch
-}
-
 set_ruby() {
   if [ -z $1 ]; then
     ruby_version='2.1.2-railsexpress'
