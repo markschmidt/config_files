@@ -9,8 +9,6 @@ alias bi="bundle install"
 alias be="bundle exec "
 alias bo="bundle open"
 
-alias xss="xing sandbox sync"
-
 os_type=`uname`
 
 # Darwin doesn't support --color attribute
@@ -33,3 +31,4 @@ alias edit_subl_packages="subl ~/Library/Application\ Support/Sublime\ Text\ 3/P
 alias cdm='cd $HOME/code/xws && eval `bin/xing_env`'
 alias rwst="rake web_service:test"
 alias ssh-hk='ssh perlrelease@perl-1.hk.fra1.xing.com'
+alias xss="xing sandbox sync"
