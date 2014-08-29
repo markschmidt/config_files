@@ -70,6 +70,10 @@ export HISTCONTROL=erasedups
 export HISTSIZE=10000
 shopt -s histappend
 
+# Profile integration test specific settings
+export BACKEND_HOST=profile-mark-schmidt.env.xing.com
+export REST_BASE_URL=http://$BACKEND_HOST:3007/rest
+
 # Brew Bash shell command completion
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
     . $(brew --prefix)/etc/bash_completion
