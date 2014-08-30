@@ -1,108 +1,93 @@
-" Copy or symlink to ~/.vimrc or ~/_vimrc.
+" Use Vim settings, rather than Vi settings (much better!).
+" This must be first, because it changes other options as a side effect.
+set nocompatible
 
-set nocompatible                  " Must come first because it changes other options.
+" allow backspacing over everything in insert mode
+set backspace=indent,eol,start
 
-
-map <Leader>m <Plug>MakeGreen
-let g:rubytest_in_quickfix = 1
-let g:LustyJugglerSuppressRubyWarning = 1
-
-silent! call pathogen#runtime_append_all_bundles()
-
-call pathogen#helptags()
-
-filetype plugin indent on         " Turn on file type detection.
-syntax enable                     " Turn on syntax highlighting.
-set ofu=syntaxcomplete#Complete
-set completeopt=longest,menuone
-
-runtime macros/matchit.vim        " Load the matchit plugin.
-
-set showcmd                       " Display incomplete commands.
-set showmode                      " Display the mode you're in.
-
-set backspace=indent,eol,start    " Intuitive backspacing.
-
-set hidden                        " Handle multiple buffers better.
-
-set wildmenu                      " Enhanced command line completion.
-set wildmode=list:longest         " Complete files like a shell.
-
-set ignorecase                    " Case-insensitive searching.
-set smartcase                     " But case-sensitive if expression contains a capital letter.
-
-set number                        " Show line numbers.
-set ruler                         " Show cursor position.
-
-set incsearch                     " Highlight matches as you type.
-set hlsearch                      " Highlight matches.
-
-set wrap                          " Turn on line wrapping.
-set scrolloff=3                   " Show 3 lines of context around the cursor.
-set linebreak
-set formatoptions=tq
-set wrapmargin=4
-set textwidth=120
-
-set title                         " Set the terminal's title
-
-set visualbell                    " No beeping.
-
-set nobackup                      " Don't make a backup before overwriting a file.
-set nowritebackup                 " And again.
+set nobackup		          " do not keep a backup file, use versions instead
+set nowritebackup	
 set directory=$HOME/.vim/tmp//,.  " Keep swap files in one location
+set history=100		          " keep 50 lines of command line history
+set ruler		          " show the cursor position all the time
+set showcmd		          " display incomplete commands
+set incsearch		          " do incremental searching
 
-" UNCOMMENT TO USE
-set tabstop=2                    " Global tab width.
-set shiftwidth=2                 " And again, related.
-set expandtab                    " Use spaces instead of tabs
+set tabstop=2
+set expandtab
 set smarttab
-set laststatus=2                  " Show the status line all the time
-set autoindent
-set smartindent
 
-set shell=/bin/bash               " Some commands seem to have problems with zsh"
+" Don't use Ex mode, use Q for formatting
+map Q gq
 
-set wildignore+=vendor,log,tmp,*.swp
-" Useful status information at bottom of screen
-set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
-" Or use vividchalk
-colorscheme github
+" CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
+" so that you can undo CTRL-U after inserting a line break.
+inoremap <C-U> <C-G>u<C-U>
 
-" Tab mappings.
-map <leader>tt :tabnew<cr>
-map <leader>te :tabedit
-map <leader>tc :tabclose<cr>
-map <leader>to :tabonly<cr>
-map <leader>tn :tabnext<cr>
-map <leader>tp :tabprevious<cr>
-map <leader>tf :tabfirst<cr>
-map <leader>tl :tablast<cr>
-map <leader>tm :tabmove
-map <leader>T :CommandT<cr>
-map <Leader>r <Plug>RubyTestRun " change from <Leader>t to <Leader>\
-map <Leader>R <Plug>RubyFileRun " change from <Leader>T to <Leader>]
-map <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR>
+" In many terminal emulators the mouse works just fine, thus enable it.
+if has('mouse')
+  set mouse=a
+endif
 
-imap <C-l> <space>=><space>
+" Switch syntax highlighting on, when the terminal has colors
+" Also switch on highlighting the last used search pattern.
+if &t_Co > 2 || has("gui_running")
+  syntax on
+  set hlsearch
+endif
 
-" Uncomment to use Jamis Buck's file opening plugin
-"map <Leader>t :FuzzyFinderTextMate<Enter>
+" Only do this part when compiled with support for autocommands.
+if has("autocmd")
 
-" Controversial...swap colon and semicolon for easier commands
-"nnoremap ; :
-"nnoremap : ;
+  " Enable file type detection.
+  " Use the default filetype settings, so that mail gets 'tw' set to 72,
+  " 'cindent' is on in C files, etc.
+  " Also load indent files, to automatically do language-dependent indenting.
+  filetype plugin indent on
 
-"vnoremap ; :
-"vnoremap : ;
+  " Put these in an autocmd group, so that we can delete them easily.
+  augroup vimrcEx
+  au!
 
-" Automatic fold settings for specific files. Uncomment to use.
-" autocmd FileType ruby set foldmethod=syntax
-" autocmd FileType css  setlocal foldmethod=indent shiftwidth=2 tabstop=2
+  " For all text files set 'textwidth' to 78 characters.
+  autocmd FileType text setlocal textwidth=78
 
-" For the MakeGreen plugin and Ruby RSpec. Uncomment to use.
-" autocmd BufNewFile,BufRead *_spec.rb compiler rspec
+  " When editing a file, always jump to the last known cursor position.
+  " Don't do it when the position is invalid or when inside an event handler
+  " (happens when dropping a file on gvim).
+  " Also don't do it when the mark is in the first line, that is the default
+  " position when opening a file.
+  autocmd BufReadPost *
+    \ if line("'\"") > 1 && line("'\"") <= line("$") |
+    \   exe "normal! g`\"" |
+    \ endif
 
-au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
+  augroup END
 
-let g:rubycomplete_rails = 1
+else
+
+  set autoindent		" always set autoindenting on
+
+endif " has("autocmd")
+
+" Convenient command to see the difference between the current buffer and the
+" file it was loaded from, thus the changes you made.
+" Only define it when not defined already.
+if !exists(":DiffOrig")
+  command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
+		  \ | wincmd p | diffthis
+endif
+
+" disable arrow keys
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
+imap <up> <nop>
+imap <down> <nop>
+imap <left> <nop>
+imap <right> <nop>
+
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+
+
