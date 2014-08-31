@@ -59,7 +59,8 @@ export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
 export PATH=$HOME/.bin:$PATH
 
-export EDITOR='subl -w'
+#export EDITOR='subl -w'
+export EDITOR=vim
 
 export EVENT_NOKQUEUE=1
 export ARCHFLAGS="-arch x86_64"
