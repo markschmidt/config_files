@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>net.markschmidt.backup_google_calendar</string>
+    <key>EnableGlobbing</key>
+    <true/>
+    <key>LimitLoadToHosts</key>
+    <array>
+        <string>Marks-MBP.local</string>
+    </array>
+   <key>ProgramArguments</key>
+    <array>
+        <string>~/.bin/backup_google_calendar</string>
+    </array>
+    <key>StartInterval</key>
+    <integer>259200</integer>
+</dict>
+</plist>
