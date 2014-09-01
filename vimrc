@@ -19,6 +19,8 @@ set tabstop=2
 set expandtab
 set smarttab
 
+set clipboard=unnamed              " clipboard integration
+
 " Don't use Ex mode, use Q for formatting
 map Q gq
 
