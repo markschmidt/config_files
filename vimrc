@@ -92,3 +92,5 @@ imap <down> <nop>
 imap <left> <nop>
 imap <right> <nop>
 
+nmap <F8> :TagbarToggle<CR>
+
