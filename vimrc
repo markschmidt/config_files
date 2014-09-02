@@ -128,13 +128,14 @@ if !exists(":DiffOrig")
   command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
 		  \ | wincmd p | diffthis
 endif
+vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 
 nnoremap <leader><leader> <c-^>                        " Switch between the last two files
 nmap <leader>e :NERDTreeToggle<CR>
 nmap <leader>f :NERDTreeFind<CR>
 map <Leader>s :w<CR>
 map <Leader>q :q!<CR>
-nmap <F8> :TagbarToggle<CR>
+nmap <leader>b :TagbarToggle<CR>
 nnoremap <F2> :set paste!<CR>                           " toogle paste mode
 nnoremap <F5> :!ctags -R<CR>
 noremap <leader>j <C-W>j<C-W>_                          " minimize split views
@@ -143,7 +144,6 @@ noremap <C-h> <C-w>h                                    " Split navigation
 noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
-" nmap <C-/>
 
 " disable arrow keys
 map <up> <nop>
