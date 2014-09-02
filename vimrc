@@ -128,6 +128,7 @@ if !exists(":DiffOrig")
   command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
 		  \ | wincmd p | diffthis
 endif
+" prepare search&replace with selected text
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 
 nnoremap <leader><leader> <c-^>                        " Switch between the last two files
