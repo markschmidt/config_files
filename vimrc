@@ -144,6 +144,8 @@ noremap <C-h> <C-w>h                                    " Split navigation
 noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
+nnoremap <C-E> :e ~/.vimrc<CR>
+nnoremap <C-R> :source ~/.vimrc<CR>
 
 " disable arrow keys
 map <up> <nop>
