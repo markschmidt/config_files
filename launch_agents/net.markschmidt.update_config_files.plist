@@ -11,6 +11,6 @@
         <string>~/.bin/update_config_files</string>
     </array>
     <key>StartInterval</key>
-    <integer>28800</integer>
+    <integer>7200</integer>
 </dict>
 </plist>
