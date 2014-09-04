@@ -23,7 +23,7 @@ alias la="ls -alhG $ls_options"
 
 alias duply_backup="cd && tar -cz .duply | gpg -c --output ~/Dropbox/backups/duply_config.tgz.gpg"
 
-alias edit_config="subl ~/.config_files"
+alias edit_config="$EDITOR ~/.config_files"
 alias edit_subl_packages="subl ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/"
 
 
