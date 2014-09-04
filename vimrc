@@ -37,6 +37,7 @@ set listchars=tab:▷⋅,trail:⋅,nbsp:⋅ " Highlight trailing spaces
 
 " set last part of current working directory as terminal-tab title
 silent execute '!printf "\e]1;$(basename `pwd`)\a"'
+auto VimLeave * :!printf "\e]1;bash\a"
 
 " http://connermcd.com/blog/2012/10/01/extending-vim%27s-text-objects/
 let pairs = { ":" : ":",
