@@ -9,13 +9,13 @@ let mapleader = ","
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
-set nobackup		          " do not keep a backup file, use versions instead
+set nobackup                        " do not keep a backup file, use versions instead
 set nowritebackup
-set directory=$HOME/.vim/tmp//,.  " Keep swap files in one location
-set history=1000		          " keep 50 lines of command line history
-set ruler		          " show the cursor position all the time
-set showcmd		          " display incomplete commands
-set incsearch		          " do incremental searching
+set directory=$HOME/.vim/tmp//,.    " Keep swap files in one location
+set history=1000                    " keep 50 lines of command line history
+set ruler                           " show the cursor position all the time
+set showcmd                         " display incomplete commands
+set incsearch                       " do incremental searching
 set mouse=a ttymouse=xterm2         " enable the use of the mouse in terminals
 
 set expandtab                       " Spaces instead of tabs
@@ -25,7 +25,7 @@ set shiftwidth=2                    " Amount of columns for indentation in n mod
 set shortmess+=I                    " don't give the intro message when starting Vim :intro.
 set smarttab
 
-set clipboard=unnamed              " clipboard integration
+set clipboard=unnamed               " clipboard integration
 
 set encoding=utf-8
 set fileencoding=utf-8
@@ -136,7 +136,7 @@ endif
 " prepare search&replace with selected text
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 
-nnoremap <leader><leader> <c-^>                        " Switch between the last two files
+nnoremap <leader><leader> <c-^>                         " Switch between the last two files
 nmap <leader>e :NERDTreeToggle<CR>
 nmap <leader>f :NERDTreeFind<CR>
 map <Leader>s :w<CR>
@@ -150,8 +150,8 @@ noremap <C-h> <C-w>h                                    " Split navigation
 noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
-nnoremap <C-E> :e ~/.vimrc<CR>
-nnoremap <C-R> :source ~/.vimrc<CR>
+nnoremap <C-E> :e ~/.vimrc<CR>                          " edit vim config
+nnoremap <C-R> :source ~/.vimrc<CR>                     " reload vim config
 
 " disable arrow keys
 map <up> <nop>
