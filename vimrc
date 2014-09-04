@@ -35,6 +35,9 @@ set t_Co=256
 set number
 set listchars=tab:▷⋅,trail:⋅,nbsp:⋅ " Highlight trailing spaces
 
+" set last part of current working directory as terminal-tab title
+silent execute '!printf "\e]1;$(basename `pwd`)\a"'
+
 " http://connermcd.com/blog/2012/10/01/extending-vim%27s-text-objects/
 let pairs = { ":" : ":",
             \ "." : ".",
@@ -128,6 +131,7 @@ if !exists(":DiffOrig")
   command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
 		  \ | wincmd p | diffthis
 endif
+
 " prepare search&replace with selected text
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 
