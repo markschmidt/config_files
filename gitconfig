@@ -10,7 +10,7 @@
         tool = mate
 [core]
         excludesfile = ~/.gitignore
-        editor = subl -w
+        editor = vim
 [push]
         default = upstream
 [apply]
