@@ -4,7 +4,10 @@ parse_git_dirty() {
 parse_git_branch() {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/(\1$(parse_git_dirty))/"
 }
-export PS1='\[\033[01;32m\]\u\[\033[01;34m\]:\w\[\033[31m\] $(parse_git_branch)\[\033[01;34m\]$\[\033[00m\] '
+check_for_bg_vim() {
+  jobs | grep -q vim && echo "[vim]"
+}
+export PS1='\[\033[01;32m\]\u\[\033[01;34m\]:\w\[\033[31m\] $(parse_git_branch)\[\033[33m\]$(check_for_bg_vim)\[\033[01;34m\]$\[\033[00m\] '
 
 set_ruby() {
   if [ -z $1 ]; then
