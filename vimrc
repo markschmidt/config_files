@@ -139,6 +139,8 @@ endif
 let g:rubytest_cmd_spec = "zeus rspec %p"
 let g:rubytest_cmd_example = "zeus rspec %p:%c"
 
+let g:ackprg = 'ag --nogroup --nocolor --column'
+
 " prepare search&replace with selected text
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 
