@@ -1,8 +1,5 @@
 --- 
 :sources: 
-- http://gems.rubyforge.org/
-- http://gems.github.com
-- http://gems.rubyforge.org
 - http://gems.xing.com
 :bulk_threshold: 1000
 :verbose: true
