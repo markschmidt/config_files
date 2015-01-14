@@ -134,6 +134,8 @@ if !exists(":DiffOrig")
 		  \ | wincmd p | diffthis
 endif
 
+command! FormatJSON %!jq '.'
+
 "let g:rubytest_cmd_spec = "bundle exec rspec %p"
 "let g:rubytest_cmd_example = "bundle exec rspec %p:%c"
 let g:rubytest_cmd_spec = "zeus rspec %p"
