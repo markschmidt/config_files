@@ -4,6 +4,8 @@ set nocompatible
 
 call pathogen#infect()
 
+runtime macros/matchit.vim
+
 let mapleader = ","
 
 " allow backspacing over everything in insert mode
