@@ -26,6 +26,8 @@ alias duply_backup="cd && tar -cz .duply | gpg -c --output ~/Dropbox/backups/dup
 alias edit_config="$EDITOR ~/.config_files"
 alias edit_subl_packages="subl ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/"
 
+alias list_remote_projects="ssh mark@markschmidt.net ls projects"
+
 
 # work-stuff
 alias cdm='cd $HOME/code/xws && eval `bin/xing_env`'
