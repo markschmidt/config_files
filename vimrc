@@ -145,6 +145,24 @@ let g:rubytest_cmd_example = "zeus rspec %p:%c"
 
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+
+let g:tagbar_type_elixir = {
+    \ 'ctagstype' : 'elixir',
+    \ 'kinds' : [
+        \ 'm:modules',
+        \ 'c:callbacks',
+        \ 'd:delegates',
+        \ 'e:exceptions',
+        \ 'i:implementations',
+        \ 'a:macros',
+        \ 'o:operators',
+        \ 'p:protocols',
+        \ 'f:functions'
+    \ ],
+    \ 'sort' : 0
+\ }
+
 " prepare search&replace with selected text
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 
