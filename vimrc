@@ -37,6 +37,7 @@ set t_Co=256
 set number
 "set list
 "set listchars=tab:▷⋅,trail:⋅,nbsp:⋅ " Highlight trailing spaces
+set wildmode=longest,list            " use bash-like completion in command mode
 
 " set last part of current working directory as terminal-tab title
 silent execute '!printf "\e]1;$(basename `pwd`)\a"'
