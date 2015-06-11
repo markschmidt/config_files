@@ -143,6 +143,13 @@ command! FormatJSON %!jq '.'
 "let g:rubytest_cmd_example = "bundle exec rspec %p:%c"
 let g:rubytest_cmd_spec = "zeus rspec %p"
 let g:rubytest_cmd_example = "zeus rspec %p:%c"
+function! BookmarkFile()
+  redir >> ~/.vims
+  echo strftime("%Y-%m-%d %H:%M") . " - " . expand("%:p").':'.line('.')
+  redir END
+endfunction
+:command! BookmarkFile :call BookmarkFile()
+
 
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
@@ -182,6 +189,7 @@ nmap <leader>f :NERDTreeFind<CR>
 map <Leader>s :w<CR>
 map <Leader>q :q!<CR>
 nmap <leader>b :TagbarToggle<CR>
+nmap <leader>B :BookmarkFile<CR>
 nnoremap <F2> :set paste!<CR>                           " toogle paste mode
 nnoremap <F5> :!ctags -R<CR>
 noremap <leader>j <C-W>j<C-W>_                          " minimize split views
