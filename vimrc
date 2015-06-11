@@ -183,6 +183,9 @@ let g:tagbar_type_elixir = {
 " prepare search&replace with selected text
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 
+" prepare search with selected text
+vnoremap <leader>F "hy:Ack '<C-r>h'
+
 nnoremap <leader><leader> <c-^>                         " Switch between the last two files
 nmap <leader>e :NERDTreeToggle<CR>
 nmap <leader>f :NERDTreeFind<CR>
