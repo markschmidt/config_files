@@ -9,30 +9,6 @@ check_for_bg_vim() {
 }
 export PS1='\[\033[01;32m\]\u\[\033[01;34m\]:\w\[\033[31m\] $(parse_git_branch)\[\033[33m\]$(check_for_bg_vim)\[\033[01;34m\]$\[\033[00m\] '
 
-set_ruby() {
-  if [ -z $1 ]; then
-    ruby_version='2.1.2-railsexpress'
-    echo "ruby-version  -> $ruby_version"
-  else
-    ruby_version=$1
-  fi
-
-  if [ -z $2 ]; then
-    gemset=${PWD##*/}
-    echo "rbenv-gemsets -> $gemset"
-  else
-    gemset=$2
-  fi
-
-  echo $ruby_version > .ruby-version
-  echo $gemset > .rbenv-gemsets
-
-  if ! gem list | grep bundler; then
-    echo 'Installing bundler...'
-    gem install bundler
-  fi
-}
-
 push_repo_to_remote() {
   folder_name=${PWD##*/}
   if [ ! -e .git ]; then echo "$folder_name is not a git repository"; fi
@@ -49,10 +25,6 @@ ssh-pw() {
   ssh -o PubkeyAuthentication=no xing-mark.schmidt@$1
 }
 
-# local aliases
-if [ -f $HOME/.aliases ]; then source $HOME/.aliases; fi
-
-
 tag() { alias $1="cd $PWD"; }
 ptag() { alias $1="cd $PWD"; echo "alias $1=\"cd $PWD\"" >> ~/.bash_aliases; }
 
@@ -62,7 +34,6 @@ export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
 export PATH=$HOME/.bin:$PATH
 
-#export EDITOR='subl -w'
 export EDITOR=vim
 
 export EVENT_NOKQUEUE=1
@@ -82,5 +53,8 @@ export REST_BASE_URL=http://$BACKEND_HOST:3007/rest
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
     . $(brew --prefix)/etc/bash_completion
 fi
+
+# local aliases
+if [ -f $HOME/.aliases ]; then source $HOME/.aliases; fi
 
 eval "$(rbenv init -)"
