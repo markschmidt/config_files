@@ -139,10 +139,6 @@ endif
 
 command! FormatJSON %!jq '.'
 
-"let g:rubytest_cmd_spec = "bundle exec rspec %p"
-"let g:rubytest_cmd_example = "bundle exec rspec %p:%c"
-let g:rubytest_cmd_spec = "zeus rspec %p"
-let g:rubytest_cmd_example = "zeus rspec %p:%c"
 function! BookmarkFile()
   redir >> ~/.vims
   echo strftime("%Y-%m-%d %H:%M") . " - " . expand("%:p").':'.line('.')
@@ -150,6 +146,10 @@ function! BookmarkFile()
 endfunction
 :command! BookmarkFile :call BookmarkFile()
 
+let g:rubytest_cmd_spec = "bundle exec rspec %p"
+let g:rubytest_cmd_example = "bundle exec rspec %p:%c"
+"let g:rubytest_cmd_spec = "zeus rspec %p"
+"let g:rubytest_cmd_example = "zeus rspec %p:%c"
 
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
@@ -202,7 +202,7 @@ noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
 nnoremap <C-E> :e ~/.vimrc<CR>                          " edit vim config
-nnoremap <C-R> :source ~/.vimrc<CR>                     " reload vim config
+" nnoremap <C-R> :source ~/.vimrc<CR>                     " reload vim config
 
 " disable arrow keys
 map <up> <nop>
