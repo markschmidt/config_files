@@ -91,7 +91,7 @@ endif
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
   " Kill all the whitespace
-  autocmd BufWritePre *.ex,*.exs,*.rb,*.js,*.md,Gemfile,Thorfile,Guardfile,Rakefile,.vimrc,.gitconfig :%s/\s\+$//e
+  autocmd BufWritePre *.ex,*.exs,*.rb,*.erb,*.js,*.md,Gemfile,Thorfile,Guardfile,Rakefile,.vimrc,.gitconfig :%s/\s\+$//e
 
   " File recognition
   autocmd BufNewFile,BufRead Gemfile,Thorfile,Guardfile,Rakefile set filetype=ruby
