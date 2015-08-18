@@ -202,6 +202,7 @@ noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
 nnoremap <C-E> :e ~/.vimrc<CR>                          " edit vim config
+noremap Q @q
 " nnoremap <C-R> :source ~/.vimrc<CR>                     " reload vim config
 
 " disable arrow keys
