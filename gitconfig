@@ -43,3 +43,7 @@
         from = mark.schmidt@xing.com
         assume8bitEncoding=UTF-8
         chainreplyto=false
+[filter "lfs"]
+	clean = git lfs clean %f
+	smudge = git lfs smudge %f
+	required = true
