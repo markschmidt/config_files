@@ -70,3 +70,6 @@
 [submodule "vim/bundle/vim-textobj-rubyblock"]
 	path = vim/bundle/vim-textobj-rubyblock
 	url = https://github.com/nelstrom/vim-textobj-rubyblock
+[submodule "vim/bundle/vim-tmux-navigator"]
+	path = vim/bundle/vim-tmux-navigator
+	url = https://github.com/christoomey/vim-tmux-navigator.git
