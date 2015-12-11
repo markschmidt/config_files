@@ -162,6 +162,7 @@ let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
       \ --ignore .DS_Store
       \ --ignore node_modules
       \ -g ""'
+let g:ctrlp_use_caching = 0
 
 let g:tagbar_autofocus = 1
 let g:tagbar_autoclose = 1
