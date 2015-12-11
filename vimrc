@@ -35,6 +35,7 @@ set ttyfast
 set term=screen-256color
 set t_Co=256
 set number
+set cursorline
 "set list
 "set listchars=tab:▷⋅,trail:⋅,nbsp:⋅ " Highlight trailing spaces
 set wildmode=longest,list            " use bash-like completion in command mode
