@@ -57,5 +57,5 @@ fi
 
 # local aliases
 if [ -f $HOME/.aliases ]; then source $HOME/.aliases; fi
-
-eval "$(rbenv init -)"
+eval "$(rbenv init --no-rehash -)"
+(rbenv rehash &) 2> /dev/null
