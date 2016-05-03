@@ -105,6 +105,8 @@ if has("autocmd")
   filetype plugin on
   filetype plugin indent on
 
+  autocmd FileType go set nolist
+
   " Put these in an autocmd group, so that we can delete them easily.
   augroup vimrcEx
   au!
