@@ -27,7 +27,10 @@ set shiftwidth=2                    " Amount of columns for indentation in n mod
 set shortmess+=I                    " don't give the intro message when starting Vim :intro.
 set smarttab
 
-set clipboard=unnamed               " clipboard integration
+"set clipboard=unnamed               " clipboard integration
+if $TMUX == ''
+  set clipboard+=unnamed
+endif
 
 set encoding=utf-8
 set fileencoding=utf-8
