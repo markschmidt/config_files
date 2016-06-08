@@ -193,6 +193,10 @@ vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 " prepare search with selected text
 vnoremap <leader>F "hy:Ack '<C-r>h'
 
+" explicit copy/paste to/from OSX clipboard (bypass tmux)
+vnoremap <leader>y :w !pbcopy<CR><CR>
+noremap <leader>p :r !pbpaste<CR><CR>
+
 nmap <leader>cs :let @*=expand("%")<CR>
 nmap <leader>cl :let @*=expand("%:p")<CR>
 
@@ -215,6 +219,11 @@ noremap Q @q
 nnoremap <leader>r :CtrlPBufTag<CR>
 nnoremap <C-E> :e ~/.vimrc<CR>                          " edit vim config
 " nnoremap <C-R> :source ~/.vimrc<CR>                     " reload vim config
+
+" Automatically jump to end of text you pasted:
+vnoremap <silent> y y`]
+vnoremap <silent> p p`]
+nnoremap <silent> p p`]
 
 " disable arrow keys
 map <up> <nop>
