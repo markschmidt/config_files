@@ -239,11 +239,19 @@ noremap Q @q
 nnoremap <leader>r :CtrlPBufTag<CR>
 nnoremap <C-E> :e ~/.vimrc<CR>                          " edit vim config
 " nnoremap <C-R> :source ~/.vimrc<CR>                     " reload vim config
+map q: :q
 
 " Automatically jump to end of text you pasted:
 vnoremap <silent> y y`]
 vnoremap <silent> p p`]
 nnoremap <silent> p p`]
+
+vmap v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)
+
+" Use Enter and Backspace to jump to the beginning/end or certain line
+nnoremap <CR> G
+nnoremap <BS> gg
 
 " disable arrow keys
 map <up> <nop>
