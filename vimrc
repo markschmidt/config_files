@@ -250,7 +250,7 @@ vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
 
 " Use Enter and Backspace to jump to the beginning/end or certain line
-nnoremap <CR> G
+"nnoremap <CR> G
 nnoremap <BS> gg
 
 " disable arrow keys
