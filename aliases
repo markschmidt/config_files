@@ -4,6 +4,7 @@ alias g="git"
 alias gci="git commit -m"
 alias gst="git status -s"
 alias gaci="gadd && gci"
+alias gitx='open -a GitX .'
 
 alias bi="bundle install"
 alias be="bundle exec "
