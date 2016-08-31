@@ -79,3 +79,6 @@
 [submodule "vim/bundle/vim-expand-region"]
 	path = vim/bundle/vim-expand-region
 	url = https://github.com/terryma/vim-expand-region.git
+[submodule "vim/bundle/ultisnips"]
+	path = vim/bundle/ultisnips
+	url = https://github.com/SirVer/ultisnips.git
