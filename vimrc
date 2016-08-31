@@ -222,6 +222,7 @@ nmap <leader>cl :let @*=expand("%:p")<CR>
 " "navigate to next/previous in quickfix list
 noremap <leader>n :cnext<CR>
 noremap <leader>p :cprevious<CR>
+noremap <leader>c :cclose<CR>
 
 nnoremap <leader><leader> <c-^>                         " Switch between the last two files
 nmap <leader>e :NERDTreeToggle<CR>
