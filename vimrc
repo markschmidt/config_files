@@ -206,13 +206,6 @@ let g:expand_region_text_objects = {
       \ 'ie'  :0,
       \ }
 
-" Use the global default + the following for ruby
-call expand_region#custom_text_objects('ruby', {
-      \ 'im' :0,
-      \ 'am' :0,
-      \ })
-
-
 " prepare search&replace with selected text
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 
