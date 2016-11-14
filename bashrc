@@ -37,6 +37,7 @@ export PATH=/usr/local/sbin:$PATH
 export PATH=$HOME/.bin:$PATH
 export PATH=$GOPATH/bin:$PATH
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
+export PATH="$HOME/.rbenv/bin:$PATH"
 
 export EDITOR=vim
 
@@ -53,10 +54,13 @@ shopt -s histappend
 export BACKEND_HOST=main-mark-schmidt.env.xing.com
 export REST_BASE_URL=http://$BACKEND_HOST:3007/rest
 
-# Brew Bash shell command completion
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-    . $(brew --prefix)/etc/bash_completion
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  # Brew Bash shell command completion
+  if [ -f $(brew --prefix)/etc/bash_completion ]; then
+      . $(brew --prefix)/etc/bash_completion
+  fi
 fi
+
 
 if [ -f $HOME/.bin/tmuxinator.bash ]; then source $HOME/.bin/tmuxinator.bash; fi
 
@@ -64,3 +68,4 @@ if [ -f $HOME/.bin/tmuxinator.bash ]; then source $HOME/.bin/tmuxinator.bash; fi
 if [ -f $HOME/.aliases ]; then source $HOME/.aliases; fi
 eval "$(rbenv init --no-rehash -)"
 (rbenv rehash &) 2> /dev/null
+
