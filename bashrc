@@ -58,6 +58,8 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
     . $(brew --prefix)/etc/bash_completion
 fi
 
+if [ -f $HOME/.bin/tmuxinator.bash ]; then source $HOME/.bin/tmuxinator.bash; fi
+
 # local aliases
 if [ -f $HOME/.aliases ]; then source $HOME/.aliases; fi
 eval "$(rbenv init --no-rehash -)"
