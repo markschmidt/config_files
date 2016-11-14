@@ -28,7 +28,7 @@ ssh-pw() {
 tag() { alias $1="cd $PWD"; }
 ptag() { alias $1="cd $PWD"; echo "alias $1=\"cd $PWD\"" >> ~/.bash_aliases; }
 
-export GOPATH=$HOME/code/go
+export GOPATH=$HOME/go
 
 export PATH=/opt/local/bin:$PATH
 export PATH=/usr/local/mysql/bin:$PATH
