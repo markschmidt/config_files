@@ -69,3 +69,7 @@ if [ -f $HOME/.aliases ]; then source $HOME/.aliases; fi
 eval "$(rbenv init --no-rehash -)"
 (rbenv rehash &) 2> /dev/null
 
+
+export NVM_DIR=$HOME/.nvm
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+source ~/.bashrc.d/source_bashrcdir
