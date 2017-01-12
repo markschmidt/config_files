@@ -1,6 +1,5 @@
 [user]
         name = Mark Schmidt
-        email = mark.schmidt@xing.com
 [color]
         status = auto
         diff = auto
@@ -34,7 +33,5 @@
         latest = for-each-ref --count=10 --sort=-committerdate --format='%(committerdate:relative) %(refname:short)'
         diff-no-renames = diff --diff-filter=M
 
-[filter "lfs"]
-	clean = git lfs clean %f
-	smudge = git lfs smudge %f
-	required = true
+[include]
+        path = ~/.gitconfig.local
