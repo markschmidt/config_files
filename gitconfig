@@ -34,15 +34,6 @@
         latest = for-each-ref --count=10 --sort=-committerdate --format='%(committerdate:relative) %(refname:short)'
         diff-no-renames = diff --diff-filter=M
 
-[git-tmbundle]
-        gitx-path = /usr/bin/gitx
-
-[sendemail]
-        suppresscc = all
-        to = core-email@jenkins.env.xing.com
-        from = mark.schmidt@xing.com
-        assume8bitEncoding=UTF-8
-        chainreplyto=false
 [filter "lfs"]
 	clean = git lfs clean %f
 	smudge = git lfs smudge %f
