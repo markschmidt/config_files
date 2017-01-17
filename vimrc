@@ -29,8 +29,12 @@ set shortmess+=I                    " don't give the intro message when starting
 set smarttab
 
 "set clipboard=unnamed               " clipboard integration
-if $TMUX == ''
-  set clipboard+=unnamed
+if has('mac')
+  if $TMUX == ''
+    set clipboard+=unnamed
+  endif
+else
+  set clipboard=unnamedplus
 endif
 
 set encoding=utf-8
