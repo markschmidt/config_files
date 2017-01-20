@@ -80,4 +80,5 @@ eval "$(rbenv init --no-rehash -)"
 
 export NVM_DIR=$HOME/.nvm
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-source ~/.bashrc.d/source_bashrcdir
+
+if [ -f $HOME/.bashrc.d/source_bashrcdir ]; then source $HOME/.bashrc.d/source_bashrcdir; fi
