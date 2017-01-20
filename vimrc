@@ -149,6 +149,7 @@ if !exists(":DiffOrig")
 endif
 
 command! FormatJSON %!jq '.'
+command! FormatXML execute '%!xmllint --format --recover - 2>/dev/null' | setfiletype xml
 
 function! BookmarkFile()
   redir >> ~/.vims
