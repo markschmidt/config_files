@@ -25,6 +25,14 @@ ssh-pw() {
   ssh -o PubkeyAuthentication=no xing-mark.schmidt@$1
 }
 
+find-file() {
+  find . -name "$1"
+}
+
+encrypt-file() {
+  gpg -r mark@markschmidt.net --output "$1.gpg" -e "$1"
+}
+
 tag() { alias $1="cd $PWD"; }
 ptag() { alias $1="cd $PWD"; echo "alias $1=\"cd $PWD\"" >> ~/.bash_aliases; }
 
