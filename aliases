@@ -37,3 +37,13 @@ alias cdm='cd $HOME/code/xws && eval `bin/xing_env`'
 alias rwst="rake web_service:test"
 alias ssh-hk='ssh perlrelease@perl-1.hk.fra1.xing.com'
 alias xss="xing sandbox sync"
+
+alias bsc="~/code/servicecontainer/bin/debug build"
+alias msc="~/code/servicecontainer/bin/debug mock"
+alias bmsc="~/code/servicecontainer/bin/debug build mock"
+alias sc="~/code/servicecontainer/bin/debug"
+alias scmock="~/code/servicecontainer/bin/startMockServices"
+
+alias mi="mvn install"
+alias mci="mvn clean install"
+alias mcist="mvn clean install -Dmaven.test.skip=true -DskipTests -Dfindbugs.skip=true -DskipTessa=true"
