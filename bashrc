@@ -54,6 +54,7 @@ export PATH=$HOME/.bin:$PATH
 export PATH=$GOPATH/bin:$PATH
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
 export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH=$PATH:~/code/baking_workspace/deployr/amibaking/baking-container
 
 export EDITOR=vim
 
