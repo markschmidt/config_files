@@ -94,3 +94,5 @@ if [ -f $HOME/.bashrc.d/source_bashrcdir ]; then source $HOME/.bashrc.d/source_b
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+
+if [ -f $HOME/.profile ]; then source ~/.profile; fi
