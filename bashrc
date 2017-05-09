@@ -25,8 +25,16 @@ ssh-pw() {
   ssh -o PubkeyAuthentication=no xing-mark.schmidt@$1
 }
 
+ssh-ec2() {
+  ssh -i ~/.ssh/sc-dev.pem ec2-user@$1
+}
+
 find-file() {
   find . -name "$1"
+}
+
+edit-in-path() {
+  vim `which $1`
 }
 
 encrypt-file() {
