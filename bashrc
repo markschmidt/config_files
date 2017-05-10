@@ -30,7 +30,7 @@ ssh-ec2() {
 }
 
 find-file() {
-  find . -name "$1"
+  find . -name "$1" 2> /dev/null
 }
 
 edit-in-path() {
