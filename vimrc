@@ -32,6 +32,8 @@ set smarttab
 if has('mac')
   if $TMUX == ''
     set clipboard+=unnamed
+  else
+    set clipboard=unnamed
   endif
 else
   set clipboard=unnamedplus
