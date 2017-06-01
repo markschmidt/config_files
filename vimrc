@@ -232,6 +232,8 @@ noremap <leader>p :cprevious<CR>
 noremap <leader>c :cclose<CR>
 
 noremap <leader>gb :GoBuild<CR>
+" Execute current file
+noremap <leader>x :!./%<CR>
 
 nnoremap <leader><leader> <c-^>                         " Switch between the last two files
 nmap <leader>e :NERDTreeToggle<CR>
