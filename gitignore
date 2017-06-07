@@ -2,3 +2,4 @@
 .rbenv-gemsets
 tags
 .DS_Store
+.idea
