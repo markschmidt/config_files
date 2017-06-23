@@ -47,6 +47,7 @@ alias scmock="~/code/servicecontainer/bin/startMockServices"
 alias mi="mvn install"
 alias mci="mvn clean install"
 alias mcist="mvn clean install -Dmaven.test.skip=true -DskipTests -Dfindbugs.skip=true -DskipTessa=true"
+alias mcv="mvn clean verify"
 alias new_aws_instance="./deployr/amibaking/devtools/deployr-launch-instance --tag mschmidt"
 
 alias start_portainer="docker run -d -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock portainer/portainer --no-auth"
