@@ -37,6 +37,10 @@ edit-in-path() {
   vim `which $1`
 }
 
+search-in-git-history() {
+  git rev-list --all | xargs git grep "$1"
+}
+
 encrypt-file() {
   gpg -r mark@markschmidt.net --output "$1.gpg" -e "$1"
 }
