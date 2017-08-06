@@ -45,6 +45,10 @@ encrypt-file() {
   gpg -r mark@markschmidt.net --output "$1.gpg" -e "$1"
 }
 
+encrypt-file-symmetric() {
+  gpg -c --output "$1.gpg" "$1"
+}
+
 tag() { alias $1="cd $PWD"; }
 ptag() { alias $1="cd $PWD"; echo "alias $1=\"cd $PWD\"" >> ~/.bash_aliases; }
 
