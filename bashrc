@@ -70,10 +70,17 @@ export EVENT_NOKQUEUE=1
 export ARCHFLAGS="-arch x86_64"
 export CLICOLOR=1
 
-# hacks from http://blog.macromates.com/2008/working-with-history-in-bash/
-export HISTCONTROL=erasedups
-export HISTSIZE=10000
+export HISTCONTROL=ignoredups:erasedups
+export HISTSIZE=100000
 shopt -s histappend
+
+#export HISTTIMEFORMAT="%s "
+#export HISTTIMEFORMAT="%F %T "
+#export HISTTIMEFORMAT=""
+#export PROMPT_COMMAND="$PROMPT_COMMAND"'echo $$ $USER\
+#export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND ; }"'echo $$ $USER \
+               #"$(history 1)" >> ~/.bash_eternal_history'
+PROMPT_COMMAND='echo "$(date "+%Y-%m-%d.%H:%M:%S") $$ $USER $HOSTNAME $(pwd) $(history 1)" >> ~/.bash_eternal_history2;'
 
 # Profile integration test specific settings
 export BACKEND_HOST=main-mark-schmidt.env.xing.com
