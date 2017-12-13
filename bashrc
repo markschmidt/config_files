@@ -49,6 +49,14 @@ encrypt-file-symmetric() {
   gpg -c --output "$1.gpg" "$1"
 }
 
+journal() {
+  if [ -z "$1" ]; then
+    local date=`date +"%Y-%m-%d"`
+  else
+    local date=`date -v$1d +"%Y-%m-%d"`
+  fi
+  vim ~/Dropbox/journal/$date.md
+}
 
 export GOPATH=$HOME/go
 
