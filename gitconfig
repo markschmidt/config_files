@@ -34,6 +34,7 @@
         su = submodule update
         latest = for-each-ref --count=10 --sort=-committerdate --format='%(committerdate:relative) %(refname:short)'
         diff-no-renames = diff --diff-filter=M
+        listtags = for-each-ref --format='%(if)%(committerdate)%(then)%(committerdate)%(else)%(*committerdate)%(end) %(refname:lstrip=2)' refs/tags/*
 
 [include]
         path = ~/.gitconfig.local
