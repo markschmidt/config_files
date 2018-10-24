@@ -9,6 +9,8 @@
 [merge]
         tool = opendiff
         tool = mate
+[rebase]
+        autoStash = true
 [core]
         excludesfile = ~/.gitignore
         editor = vim
