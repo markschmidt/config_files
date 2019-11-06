@@ -92,12 +92,6 @@ PROMPT_COMMAND='echo "$(date "+%Y-%m-%d.%H:%M:%S") $$ $USER $HOSTNAME $(pwd) $(h
 export BACKEND_HOST=main-mark-schmidt.env.xing.com
 export REST_BASE_URL=http://$BACKEND_HOST:3007/rest
 
-if [[ "$OSTYPE" == "darwin"* ]]; then
-  # Brew Bash shell command completion
-  if [ -f $(brew --prefix)/etc/bash_completion ]; then
-      . $(brew --prefix)/etc/bash_completion
-  fi
-fi
 export JAVA_8_HOME=$(/usr/libexec/java_home -v1.8)
 export JAVA_11_HOME=$(/usr/libexec/java_home -v11)
 
@@ -107,9 +101,15 @@ alias java11='export JAVA_HOME=$JAVA_11_HOME'
 # default to Java 8
 java8
 
+#if [[ "$OSTYPE" == "darwin"* ]]; then
+   #Brew Bash shell command completion
+  #if [ -f $(brew --prefix)/etc/bash_completion ]; then
+      #. $(brew --prefix)/etc/bash_completion
+  #fi
+#fi
 
 
-if [ -f $HOME/.bin/tmuxinator.bash ]; then source $HOME/.bin/tmuxinator.bash; fi
+#if [ -f $HOME/.bin/tmuxinator.bash ]; then source $HOME/.bin/tmuxinator.bash; fi
 
 # local aliases
 if [ -f $HOME/.aliases ]; then source $HOME/.aliases; fi
@@ -117,14 +117,14 @@ eval "$(rbenv init --no-rehash -)"
 (rbenv rehash &) 2> /dev/null
 
 
-export NVM_DIR=$HOME/.nvm
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+#export NVM_DIR=$HOME/.nvm
+#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
 if [ -f $HOME/.bashrc.d/source_bashrcdir ]; then source $HOME/.bashrc.d/source_bashrcdir; fi
 
-if which klam-ext > /dev/null; then
-    eval "$(env klam-ext bash-integration)";
-fi
+#if which klam-ext > /dev/null; then
+    #eval "$(env klam-ext bash-integration)";
+#fi
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
