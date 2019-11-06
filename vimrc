@@ -160,8 +160,8 @@ function! BookmarkFile()
 endfunction
 :command! BookmarkFile :call BookmarkFile()
 
-let g:rubytest_cmd_spec = "bundle exec rspec %p"
-let g:rubytest_cmd_example = "bundle exec rspec %p:%c"
+"let g:rubytest_cmd_spec = "bundle exec rspec %p"
+"let g:rubytest_cmd_example = "bundle exec rspec %p:%c"
 "let g:rubytest_cmd_spec = "zeus rspec %p"
 "let g:rubytest_cmd_example = "zeus rspec %p:%c"
 
