@@ -2,7 +2,7 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
-let g:pathogen_disabled = ['snipMate']
+let g:pathogen_disabled = ['snipMate', 'UltiSnips']
 call pathogen#infect()
 
 runtime macros/matchit.vim
@@ -178,9 +178,9 @@ let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
 let g:ctrlp_use_caching = 0
 
 
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+"let g:UltiSnipsExpandTrigger="<tab>"
+"let g:UltiSnipsJumpForwardTrigger="<c-b>"
+"let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 let g:tagbar_autofocus = 1
 let g:tagbar_autoclose = 1
