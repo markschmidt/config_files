@@ -21,7 +21,7 @@ alias tophalf       move screenOriginX;screenOriginY                  screenSize
 alias bottomhalf    move screenOriginX;screenOriginY+screenSizeY/2    screenSizeX;screenSizeY/2
 
 # Shortcut for getting into modal mode
-alias modal-combo   shift;cmd;m
+alias modal-combo   shift;cmd;s
 
 layout 1monitor 'Sublime Text 2':REPEAT ${full}
 layout 1monitor 'Google Chrome':REPEAT ${full}
