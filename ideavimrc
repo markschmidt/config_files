@@ -28,3 +28,4 @@ map <leader>] :action EditorCodeBlockEnd<CR>
 
 set clipboard+=unnamed
 
+set ideajoin

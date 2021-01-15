@@ -69,6 +69,7 @@ export PATH=$GOPATH/bin:$PATH
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH=$PATH:~/code/baking_workspace/deployr/amibaking/baking-container
+export PATH=$PATH:~/.ghcup/bin
 
 export EDITOR=vim
 
@@ -130,3 +131,4 @@ if [ -f $HOME/.bashrc.d/source_bashrcdir ]; then source $HOME/.bashrc.d/source_b
 export PATH="$PATH:$HOME/.rvm/bin"
 
 if [ -f $HOME/.profile ]; then source ~/.profile; fi
+source /Users/mschmidt/.ghcup/env
