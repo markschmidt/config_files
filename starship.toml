@@ -1,0 +1,10 @@
+[jobs]
+disabled = true
+
+[git_branch]
+symbol = "🌱 "
+
+[custom.vim]
+command = "echo ' [vim]'"
+when = '[ "$VIM_IN_BG" == "true" ]'
+

@@ -132,3 +132,13 @@ export PATH="$PATH:$HOME/.rvm/bin"
 
 if [ -f $HOME/.profile ]; then source ~/.profile; fi
 source /Users/mschmidt/.ghcup/env
+
+function vim_bg_checker(){
+    if jobs | grep -q vim ; then
+        export VIM_IN_BG=true
+    else
+        export VIM_IN_BG=false
+    fi
+}
+starship_precmd_user_func="vim_bg_checker"
+eval "$(starship init bash)"
