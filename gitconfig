@@ -42,3 +42,5 @@
         path = ~/.gitconfig.local
 [pull]
 	ff = only
+[rerere]
+	enabled = true
