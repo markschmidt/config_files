@@ -1,3 +1,5 @@
+command_timeout = 1000
+
 [jobs]
 disabled = true
 
@@ -7,4 +9,3 @@ symbol = "🌱 "
 [custom.vim]
 command = "echo ' [vim]'"
 when = '[ "$VIM_IN_BG" == "true" ]'
-
