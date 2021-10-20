@@ -102,12 +102,12 @@ alias java11='export JAVA_HOME=$JAVA_11_HOME'
 # default to Java 11
 java11
 
-#if [[ "$OSTYPE" == "darwin"* ]]; then
+if [[ "$OSTYPE" == "darwin"* ]]; then
    #Brew Bash shell command completion
-  #if [ -f $(brew --prefix)/etc/bash_completion ]; then
-      #. $(brew --prefix)/etc/bash_completion
-  #fi
-#fi
+  if [ -f $(brew --prefix)/etc/bash_completion ]; then
+      . $(brew --prefix)/etc/bash_completion
+  fi
+fi
 
 
 #if [ -f $HOME/.bin/tmuxinator.bash ]; then source $HOME/.bin/tmuxinator.bash; fi
