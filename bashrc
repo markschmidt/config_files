@@ -131,7 +131,7 @@ if [ -f $HOME/.bashrc.d/source_bashrcdir ]; then source $HOME/.bashrc.d/source_b
 export PATH="$PATH:$HOME/.rvm/bin"
 
 if [ -f $HOME/.profile ]; then source ~/.profile; fi
-source /Users/mschmidt/.ghcup/env
+if [ -f $HOME/.ghcup/env ]; then source ~/.ghcup/env; fi
 
 function vim_bg_checker(){
     if jobs | grep -q vim ; then
