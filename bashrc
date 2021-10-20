@@ -99,8 +99,8 @@ export JAVA_11_HOME=$(/usr/libexec/java_home -v11)
 alias java8='export JAVA_HOME=$JAVA_8_HOME'
 alias java11='export JAVA_HOME=$JAVA_11_HOME'
 
-# default to Java 8
-java8
+# default to Java 11
+java11
 
 #if [[ "$OSTYPE" == "darwin"* ]]; then
    #Brew Bash shell command completion
