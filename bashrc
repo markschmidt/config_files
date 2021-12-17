@@ -96,14 +96,18 @@ PROMPT_COMMAND='echo "$(date "+%Y-%m-%d.%H:%M:%S") $$ $USER $HOSTNAME $(pwd) $(h
 export BACKEND_HOST=main-mark-schmidt.env.xing.com
 export REST_BASE_URL=http://$BACKEND_HOST:3007/rest
 
-export JAVA_8_HOME=$(/usr/libexec/java_home -v1.8)
-export JAVA_11_HOME=$(/usr/libexec/java_home -v11)
+# check if any java is installed
+if command -v /usr/libexec/java_home &> /dev/null && /usr/libexec/java_home -F &> /dev/null; then
+  export JAVA_8_HOME=$(/usr/libexec/java_home -v1.8)
+  export JAVA_11_HOME=$(/usr/libexec/java_home -v11)
 
-alias java8='export JAVA_HOME=$JAVA_8_HOME'
-alias java11='export JAVA_HOME=$JAVA_11_HOME'
+  alias java8='export JAVA_HOME=$JAVA_8_HOME'
+  alias java11='export JAVA_HOME=$JAVA_11_HOME'
+ 
+  # default to Java 11
+  java11
+fi
 
-# default to Java 11
-java11
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
    #Brew Bash shell command completion
@@ -139,12 +143,14 @@ export PATH="$PATH:$HOME/.rvm/bin"
 if [ -f $HOME/.profile ]; then source ~/.profile; fi
 if [ -f $HOME/.ghcup/env ]; then source ~/.ghcup/env; fi
 
-function vim_bg_checker(){
-    if jobs | grep -q vim ; then
-        export VIM_IN_BG=true
-    else
-        export VIM_IN_BG=false
-    fi
-}
-starship_precmd_user_func="vim_bg_checker"
-eval "$(starship init bash)"
+if command -v starship &> /dev/null; then
+  function vim_bg_checker(){
+      if jobs | grep -q vim ; then
+          export VIM_IN_BG=true
+      else
+          export VIM_IN_BG=false
+      fi
+  }
+  starship_precmd_user_func="vim_bg_checker"
+  eval "$(starship init bash)"
+fi
