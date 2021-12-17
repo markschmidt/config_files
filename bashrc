@@ -65,11 +65,14 @@ export PATH=/usr/local/mysql/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
 export PATH=$HOME/.bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
 export PATH=$GOPATH/bin:$PATH
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH=$PATH:~/code/baking_workspace/deployr/amibaking/baking-container
-export PATH=$PATH:~/.ghcup/bin
+export PATH="$HOME/.cabal/bin:$HOME/.ghcup/bin:$PATH"
+# use node14 as default
+export PATH=/usr/local/opt/node@14/bin:$PATH
 
 export EDITOR=vim
 
@@ -114,8 +117,11 @@ fi
 
 # local aliases
 if [ -f $HOME/.aliases ]; then source $HOME/.aliases; fi
-eval "$(rbenv init --no-rehash -)"
-(rbenv rehash &) 2> /dev/null
+if command -v rbenv &> /dev/null; then
+  eval "$(rbenv init --no-rehash -)"
+  (rbenv rehash &) 2> /dev/null
+fi
+
 
 
 #export NVM_DIR=$HOME/.nvm
