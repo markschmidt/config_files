@@ -29,6 +29,8 @@ alias edit_subl_packages="subl ~/Library/Application\ Support/Sublime\ Text\ 3/P
 
 alias list_remote_projects="ssh mark@markschmidt.net ls projects"
 
+alias vim="nvim"
+
 
 # work-stuff
 alias cdm='cd $HOME/code/xws && eval `bin/xing_env`'
