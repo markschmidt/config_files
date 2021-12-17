@@ -1,2 +1,4 @@
 vim/tmp/*
 tmux/plugins/*
+nvim/swap/*
+nvim/backup/*
