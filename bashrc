@@ -98,7 +98,7 @@ export REST_BASE_URL=http://$BACKEND_HOST:3007/rest
 
 # check if any java is installed
 if command -v /usr/libexec/java_home &> /dev/null && /usr/libexec/java_home -F &> /dev/null; then
-  export JAVA_8_HOME=$(/usr/libexec/java_home -v1.8)
+  export JAVA_8_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/
   export JAVA_11_HOME=$(/usr/libexec/java_home -v11)
 
   alias java8='export JAVA_HOME=$JAVA_8_HOME'
