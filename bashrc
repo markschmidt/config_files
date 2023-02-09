@@ -142,6 +142,7 @@ export PATH="$PATH:$HOME/.rvm/bin"
 
 if [ -f $HOME/.profile ]; then source ~/.profile; fi
 if [ -f $HOME/.ghcup/env ]; then source ~/.ghcup/env; fi
+if [ -f $HOME/.bash_export_secrets ]; then source ~/.bash_export_secrets; fi
 
 if command -v starship &> /dev/null; then
   function vim_bg_checker(){
