@@ -69,6 +69,8 @@ nmap <leader>x :!open %<cr><cr>
 " Quicky escape to normal mode
 imap jj <esc>
 
+noremap <leader>/ :Commentary<cr>
+
 " Easy insertion of a trailing ; or , from insert mode
 imap ;; <Esc>A;<Esc>
 imap ,, <Esc>A,<Esc>
@@ -106,8 +108,9 @@ endif
 call plug#begin(data_dir . '/plugins')
 
 source ~/.config/nvim/plugins/airline.vim
+source ~/.config/nvim/plugins/ack.vim
 source ~/.config/nvim/plugins/coc.vim
-"source ~/.config/nvim/plugins/commentary.vim
+source ~/.config/nvim/plugins/commentary.vim
 "source ~/.config/nvim/plugins/dispatch.vim
 source ~/.config/nvim/plugins/floaterm.vim
 source ~/.config/nvim/plugins/fugitive.vim
