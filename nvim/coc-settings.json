@@ -4,8 +4,17 @@
       "command": "haskell-language-server-wrapper",
       "args": ["--lsp"],
       "rootPatterns": ["*.cabal", "stack.yaml", "cabal.project", "package.yaml", "hie.yaml"],
-      "filetypes": ["haskell", "lhaskell"],
-      "initializationOptions": { "languageServerHaskell": { "hlintOn": true }
+      "filetypes": ["haskell", "lhaskell", "hs"],
+      "initializationOptions": { "languageServerHaskell": { "hlintOn": true }}
     }
-  }
+  },
+  "diagnostic": {
+    "virtualText": true,
+    "virtualTextCurrentLineOnly": false,
+    "virtualTextLines": 1,
+    "virtualTextPrefix": " —— "
+  },
+  "list.height": 20,
+  "codeLens.enable": true,
+  "coc.preferences.enableMarkdown": true
 }

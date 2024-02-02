@@ -116,6 +116,7 @@ source ~/.config/nvim/plugins/floaterm.vim
 source ~/.config/nvim/plugins/fugitive.vim
 source ~/.config/nvim/plugins/fzf.vim
 source ~/.config/nvim/plugins/lion.vim
+source ~/.config/nvim/plugins/language-client-neovim.vim
 source ~/.config/nvim/plugins/markdown-preview.vim
 source ~/.config/nvim/plugins/nerdtree.vim
 source ~/.config/nvim/plugins/peekaboo.vim
