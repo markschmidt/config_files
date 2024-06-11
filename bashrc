@@ -65,6 +65,7 @@ export PATH=/usr/local/mysql/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
 export PATH=$HOME/.bin:$PATH
+export PATH=$HOME/.docker/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$GOPATH/bin:$PATH
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
@@ -90,24 +91,30 @@ shopt -s histappend
 #export PROMPT_COMMAND="$PROMPT_COMMAND"'echo $$ $USER\
 #export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND ; }"'echo $$ $USER \
                #"$(history 1)" >> ~/.bash_eternal_history'
-PROMPT_COMMAND='echo "$(date "+%Y-%m-%d.%H:%M:%S") $$ $USER $HOSTNAME $(pwd) $(history 1)" >> ~/.bash_eternal_history2;'
+# Note: this doesn't work together with mcfly!
+# PROMPT_COMMAND='echo "$(date "+%Y-%m-%d.%H:%M:%S") $$ $USER $HOSTNAME $(pwd) $(history 1)" >> ~/.bash_eternal_history2;'
 
 # Profile integration test specific settings
 export BACKEND_HOST=main-mark-schmidt.env.xing.com
 export REST_BASE_URL=http://$BACKEND_HOST:3007/rest
 
+
+export VAULT_ADDR=https://vault-amer.adobe.net
+export BASH_SILENCE_DEPRECATION_WARNING=1
+
 # check if any java is installed
 if command -v /usr/libexec/java_home &> /dev/null && /usr/libexec/java_home -F &> /dev/null; then
-  export JAVA_8_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/
+  #export JAVA_8_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/
   export JAVA_11_HOME=$(/usr/libexec/java_home -v11)
 
-  alias java8='export JAVA_HOME=$JAVA_8_HOME'
+  #alias java8='export JAVA_HOME=$JAVA_8_HOME'
   alias java11='export JAVA_HOME=$JAVA_11_HOME'
  
   # default to Java 11
-  java11
+  #java11
 fi
 
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
    #Brew Bash shell command completion
@@ -143,6 +150,9 @@ export PATH="$PATH:$HOME/.rvm/bin"
 if [ -f $HOME/.profile ]; then source ~/.profile; fi
 if [ -f $HOME/.ghcup/env ]; then source ~/.ghcup/env; fi
 if [ -f $HOME/.bash_export_secrets ]; then source ~/.bash_export_secrets; fi
+
+# better history search
+eval "$(mcfly init bash)"
 
 if command -v starship &> /dev/null; then
   function vim_bg_checker(){
