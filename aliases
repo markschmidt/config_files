@@ -33,16 +33,33 @@ alias vim="nvim"
 
 
 # work-stuff
-alias cdm='cd $HOME/code/xws && eval `bin/xing_env`'
-alias rwst="rake web_service:test"
-alias ssh-hk='ssh perlrelease@perl-1.hk.fra1.xing.com'
-alias xss="xing sandbox sync"
-
 alias bsc="~/code/servicecontainer/bin/debug build"
 alias msc="~/code/servicecontainer/bin/debug mock"
 alias bmsc="~/code/servicecontainer/bin/debug build mock"
 alias sc="~/code/servicecontainer/bin/debug"
 alias scmock="~/code/servicecontainer/bin/startMockServices"
+
+alias hub-kubectl='kubectl --context=ethos999prodor2 -n ns-team-sharedcloud--servicecontainer-deploy--16a9a14-0e7bd798'
+alias dev-irl1-kubectl='kubectl --context=ethos503stageirl1 -n ns-team-acp-cs-servicecontainer-dev'
+alias dev-va6-kubectl='kubectl --context=ethos503stageva6 -n ns-team-acp-cs-servicecontainer-dev'
+alias dev-va7-kubectl='kubectl --context=ethos05stageva7 -n ns-ethos-db454fa554f08bda1ce92d98f-dev09'
+alias stage-va7-kubectl='kubectl --context=ethos05stageva7 -n ns-ethos-db454fa554f08bda1ce92d9-stage09'
+alias stage-va6-kubectl='kubectl --context=ethos501stageva6 -n ns-team-acp-cs-servicecontainer-stage'
+alias stage-irl1-kubectl='kubectl --context=ethos501stageirl1 -n ns-team-acp-cs-servicecontainer-stage'
+alias stage-jpn3-kubectl='kubectl --context=ethos501stagejpn3 -n ns-team-acp-cs-servicecontainer-stage'
+alias prod-va6-kubectl='kubectl --context=ethos506prodva6 -n ns-team-acp-cs-servicecontainer-prod'
+alias prod-va6c2-kubectl='kubectl --context=ethos507prodva6 -n ns-team-acp-cs-servicecontainer-prod'
+alias prod-irl1-kubectl='kubectl --context=ethos506prodirl1 -n ns-team-acp-cs-servicecontainer-prod'
+alias prod-jpn3-kubectl='kubectl --context=ethos506prodjpn3-n ns-team-acp-cs-servicecontainer-prod'
+alias prod-va7-kubectl='kubectl --context=ethos05prodva7 -n ns-ethos-db454fa554f08bda1c-production09'
+
+alias  kcpd="kubectl --context=ethos501-stage-va6 -n ns-ethos-3cff76ba559dbdb4f59de6d8faf-dev"
+alias  kcps="kubectl --context=ethos501-stage-va6 -n ns-ethos-3cff76ba559dbdb4f59de6d8f-stage"
+alias  kcpp="kubectl --context=ethos501-prod-va6  -n ns-ethos-3cff76ba559dbdb4f59de6d8fa-prod"
+
+alias cp-klam-dev='klam configure-profile --name KLAM-CP-DEV --default true  --project CommunityPlatform --environment Dev --cloud aws --policy administrator_and_support  --duration 1 && klam credentials -o aws -c'
+alias cp-klam-stage='klam configure-profile --name KLAM-CP-STAGE --default true  --project CommunityPlatform --environment Stage --cloud aws --policy administrator_and_support  --duration 1 && klam credentials -o aws -c'
+alias cp-klam-prod='klam configure-profile --name KLAM-CP-PROD --default true  --project CommunityPlatform --environment Prod --cloud aws --policy administrator_and_support  --duration 1 && klam credentials -o aws -c'
 
 alias mi="mvn install"
 alias mci="mvn clean install"
