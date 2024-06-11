@@ -71,11 +71,26 @@ imap jj <esc>
 
 noremap <leader>/ :Commentary<cr>
 
+
+" mitigate sloppy saving...
+nmap <leader>s :write<cr>
+
 " Easy insertion of a trailing ; or , from insert mode
 imap ;; <Esc>A;<Esc>
 imap ,, <Esc>A,<Esc>
 
 cmap w!! %!sudo tee > /dev/null %
+
+" prepare search&replace with selected text
+vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
+
+" prepare search with selected text
+vnoremap <leader>F "hy:Ack '<C-r>h'
+
+" "navigate to next/previous in quickfix list
+noremap <leader>n :cnext<CR>
+noremap <leader>p :cprevious<CR>
+noremap <leader>c :cclose<CR>
 
 " Switch between the last two files
 nnoremap <leader><leader> <c-^>
@@ -95,6 +110,13 @@ imap <up> <nop>
 imap <down> <nop>
 imap <left> <nop>
 imap <right> <nop>
+
+
+" custom commands / shortcuts
+
+command! FormatJSON %!jq '.'
+command! FormatXML execute '%!xmllint --format --recover - 2>/dev/null' | setfiletype xml
+
 
 " --- Plugins
 
