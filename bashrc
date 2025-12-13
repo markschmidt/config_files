@@ -173,3 +173,12 @@ if command -v starship &> /dev/null; then
   starship_precmd_user_func="vim_bg_checker"
   eval "$(starship init bash)"
 fi
+
+export NVM_DIR="$HOME/.nvm"
+ . "$(brew --prefix nvm)/nvm.sh"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/mschmidt/.lmstudio/bin"
+# End of LM Studio CLI section
+
+. "$HOME/.cargo/env"
