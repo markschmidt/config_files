@@ -157,6 +157,7 @@ export PATH="$PATH:$HOME/.rvm/bin"
 if [ -f $HOME/.profile ]; then source ~/.profile; fi
 if [ -f $HOME/.ghcup/env ]; then source ~/.ghcup/env; fi
 if [ -f $HOME/.bash_export_secrets ]; then source ~/.bash_export_secrets; fi
+if [ -f $HOME/.bash_profile_local ]; then source ~/.bash_profile_local; fi
 
 # better history search
 eval "$(mcfly init bash)"
