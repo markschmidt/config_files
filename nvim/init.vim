@@ -31,6 +31,9 @@ set directory=~/.config/nvim/swap//
 set updatetime=300 " Reduce time for highlighting other references
 set redrawtime=10000 " Allow more time for loading syntax on large files
 
+syntax on
+filetype plugin indent on
+
 colorscheme sexy-railscasts-256
 
 " --- Key maps
@@ -127,13 +130,25 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
+"
+" custom coc config
+"
+
+" Make <CR> to accept selected completion item or notify coc.nvim to format
+" <C-g>u breaks current undo, please make your own choice
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+let g:python3_host_prog = '/opt/homebrew/bin/python3' " -- Set python 3 provider
 call plug#begin(data_dir . '/plugins')
 
 source ~/.config/nvim/plugins/airline.vim
 source ~/.config/nvim/plugins/ack.vim
 source ~/.config/nvim/plugins/coc.vim
+Plug 'elixir-lsp/coc-elixir', {'do': 'yarn install && yarn prepack'}
+Plug 'vim-editors/vim-elixir'
 source ~/.config/nvim/plugins/commentary.vim
-"source ~/.config/nvim/plugins/dispatch.vim
+  "source ~/.config/nvim/plugins/dispatch.vim
 source ~/.config/nvim/plugins/floaterm.vim
 source ~/.config/nvim/plugins/fugitive.vim
 source ~/.config/nvim/plugins/fzf.vim
@@ -150,7 +165,7 @@ source ~/.config/nvim/plugins/textobj-xmlattr.vim
 source ~/.config/nvim/plugins/vim-test.vim
 source ~/.config/nvim/plugins/visual-multi.vim
 source ~/.config/nvim/plugins/visual-star-search.vim
-source ~/.config/nvim/plugins/which-key.vim
+"source ~/.config/nvim/plugins/which-key.vim
 
 call plug#end()
 doautocmd User PlugLoaded
