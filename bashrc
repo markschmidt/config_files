@@ -102,6 +102,9 @@ export REST_BASE_URL=http://$BACKEND_HOST:3007/rest
 export VAULT_ADDR=https://vault-amer.adobe.net
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
+# CP
+export use_local_cache=true
+
 # check if any java is installed
 if command -v /usr/libexec/java_home &> /dev/null && /usr/libexec/java_home -F &> /dev/null; then
   #export JAVA_8_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/
