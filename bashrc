@@ -109,9 +109,13 @@ export use_local_cache=true
 if command -v /usr/libexec/java_home &> /dev/null && /usr/libexec/java_home -F &> /dev/null; then
   #export JAVA_8_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/
   export JAVA_11_HOME=$(/usr/libexec/java_home -v11)
+  export JAVA_17_HOME=$(/usr/libexec/java_home -v17)
+  export JAVA_21_HOME=$(/usr/libexec/java_home -v21)
 
   #alias java8='export JAVA_HOME=$JAVA_8_HOME'
   alias java11='export JAVA_HOME=$JAVA_11_HOME'
+  alias java17='export JAVA_HOME=$JAVA_17_HOME'
+  alias java21='export JAVA_HOME=$JAVA_21_HOME'
  
   # default to Java 11
   #java11
