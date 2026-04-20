@@ -4,3 +4,5 @@ tags
 .DS_Store
 .idea
 *.local-ignore
+.beans/
+.beans.yml
