@@ -54,12 +54,19 @@ alias prod-jpn3-kubectl='kubectl --context=ethos506prodjpn3-n ns-team-acp-cs-ser
 alias prod-va7-kubectl='kubectl --context=ethos05prodva7 -n ns-ethos-db454fa554f08bda1c-production09'
 
 alias  kcpd="kubectl --context=ethos501-stage-va6 -n ns-ethos-3cff76ba559dbdb4f59de6d8faf-dev"
-alias  kcps="kubectl --context=ethos501-stage-va6 -n ns-ethos-3cff76ba559dbdb4f59de6d8f-stage"
+alias  kcps="kubectl --context=ethos501-stage-va6 -n ns-team-acp-communityplatform-stage"
 alias  kcpp="kubectl --context=ethos501-prod-va6  -n ns-ethos-3cff76ba559dbdb4f59de6d8fa-prod"
 
-alias cp-klam-dev='klam configure-profile --name KLAM-CP-DEV --default true  --project CommunityPlatform --environment Dev --cloud aws --policy administrator_and_support  --duration 1 && klam credentials -o aws -c'
-alias cp-klam-stage='klam configure-profile --name KLAM-CP-STAGE --default true  --project CommunityPlatform --environment Stage --cloud aws --policy administrator_and_support  --duration 1 && klam credentials -o aws -c'
-alias cp-klam-prod='klam configure-profile --name KLAM-CP-PROD --default true  --project CommunityPlatform --environment Prod --cloud aws --policy administrator_and_support  --duration 1 && klam credentials -o aws -c'
+alias kubeCpDevFlex="KUBECONFIG=~/.kube/kubeconfig.yaml kubectl --context=ethos501-stage-va6 -n ns-team-acp-communityplatform-dev"
+alias kubeCpStageFlex="KUBECONFIG=~/.kube/kubeconfig.yaml kubectl --context=ethos501-stage-va6 -n ns-team-acp-communityplatform-stage"
+alias kubeCpProdFlex="KUBECONFIG=~/.kube/kubeconfig.yaml kubectl --context=ethos502-prod-va6 -n ns-team-acp-communityplatform-prod"
+
+alias kubeCpENMProd="KUBECONFIG=~/.kube/kubeconfig.yaml kubectl --context=ethos502-prod-va6 -n ns-team-acp-communityplatform-enm-prod"
+alias kubeCpENMNonProd="KUBECONFIG=~/.kube/kubeconfig.yaml kubectl --context=ethos501-stage-va6 -n ns-team-acp-communityplatform-enm-nonprod"
+
+alias cp-klam-dev='klam configure-profile --name KLAM-CP-DEV --default true  --project CommunityPlatform --environment Dev --cloud aws --policy cp_administrator_and_support  --duration 1 && klam credentials -o aws -c'
+alias cp-klam-stage='klam configure-profile --name KLAM-CP-STAGE --default true  --project CommunityPlatform --environment Stage --cloud aws --policy cp_administrator_and_support  --duration 1 && klam credentials -o aws -c'
+alias cp-klam-prod='klam configure-profile --name KLAM-CP-PROD --default true  --project CommunityPlatform --environment Prod --cloud aws --policy cp_administrator_and_support  --duration 1 && klam credentials -o aws -c'
 
 alias mi="mvn install"
 alias mci="mvn clean install"
