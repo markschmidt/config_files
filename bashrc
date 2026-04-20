@@ -190,4 +190,6 @@ if [ -f ~/.mcp-tokens ]; then
     source ~/.mcp-tokens
 fi
 
+export PATH="$PATH:/Applications/Obsidian.app/Contents/MacOS"
+
 . "$HOME/.cargo/env"
