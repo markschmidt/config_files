@@ -77,6 +77,7 @@ alias new_aws_instance="./deployr/amibaking/devtools/deployr-launch-instance --t
 
 alias start_portainer="docker run -d -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock portainer/portainer --no-auth && sleep 2 && open http://localhost:9000"
 
+alias claude-sandbox='$HOME/code/claude-docker-sandbox/run.sh'
 # postgres
 alias pg_start="launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist"
 alias pg_stop="launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist"
