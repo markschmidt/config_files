@@ -78,6 +78,47 @@ alias new_aws_instance="./deployr/amibaking/devtools/deployr-launch-instance --t
 alias start_portainer="docker run -d -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock portainer/portainer --no-auth && sleep 2 && open http://localhost:9000"
 
 alias claude-sandbox='$HOME/code/claude-docker-sandbox/run.sh'
+
+# tmux: create default sessions and attach
+tmux-start() {
+  if tmux has-session 2>/dev/null; then
+    echo "tmux already running. Use 'tmux a' to attach."
+    return
+  fi
+
+  tmux new-session -d -s "General" -c "$HOME"
+  tmux new-session -d -s "Claude Usage Stats" -c "$HOME/code/claude-usage-stats"
+  tmux send-keys -t "Claude Usage Stats" "./monthly-summary.sh" Enter
+
+  tmux attach -t "General"
+}
+
+# tmux: create a named session with claude + shell panes
+tmux-claude() {
+  local session="${1:-claude}"
+  local dir="${2:-$(pwd)}"
+
+  if tmux has-session -t "$session" 2>/dev/null; then
+    if [ -n "$TMUX" ]; then
+      tmux switch-client -t "$session"
+    else
+      tmux attach -t "$session"
+    fi
+    return
+  fi
+
+  tmux new-session -d -s "$session" -c "$dir"
+  tmux split-window -v -l 30% -t "$session" -c "$dir"
+  tmux select-pane -t "$session":1.1
+  tmux send-keys -t "$session":1.1 "claude --enable-auto-mode" Enter
+
+  if [ -n "$TMUX" ]; then
+    tmux switch-client -t "$session"
+  else
+    tmux attach -t "$session"
+  fi
+}
+
 # postgres
 alias pg_start="launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist"
 alias pg_stop="launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist"

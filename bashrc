@@ -77,6 +77,8 @@ export PATH=/usr/local/opt/node@14/bin:$PATH
 
 export EDITOR=vim
 
+stty -ixon
+
 export EVENT_NOKQUEUE=1
 export ARCHFLAGS="-arch x86_64"
 export CLICOLOR=1
