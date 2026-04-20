@@ -7,3 +7,8 @@ fi
 export PATH="/usr/local/opt/node@14/bin:$PATH"
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/mschmidt/.lmstudio/bin"
+# End of LM Studio CLI section
+
