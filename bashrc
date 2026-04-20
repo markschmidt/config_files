@@ -185,4 +185,9 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="$PATH:/Users/mschmidt/.lmstudio/bin"
 # End of LM Studio CLI section
 
+# Load Adobe MCP Gateway tokens
+if [ -f ~/.mcp-tokens ]; then
+    source ~/.mcp-tokens
+fi
+
 . "$HOME/.cargo/env"
