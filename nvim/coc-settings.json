@@ -16,5 +16,6 @@
   },
   "list.height": 20,
   "codeLens.enable": true,
-  "coc.preferences.enableMarkdown": true
+  "coc.preferences.enableMarkdown": true,
+  "snippets.ultisnips.pythonPrompt": false
 }

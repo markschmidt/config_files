@@ -76,6 +76,8 @@ export PATH="$HOME/.cabal/bin:$HOME/.ghcup/bin:$PATH"
 export PATH=/usr/local/opt/node@14/bin:$PATH
 
 export EDITOR=vim
+# OSX - disable zsh warning
+export BASH_SILENCE_DEPRECATION_WARNING=1
 
 stty -ixon
 
@@ -143,7 +145,6 @@ if command -v rbenv &> /dev/null; then
   eval "$(rbenv init --no-rehash -)"
   (rbenv rehash &) 2> /dev/null
 fi
-
 
 
 #export NVM_DIR=$HOME/.nvm
