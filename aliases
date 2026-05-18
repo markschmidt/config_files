@@ -99,7 +99,7 @@ tmux-start() {
 
   tmux new-session -d -s "Obsidian vault" -c "$HOME/Documents/Obsidian/Work-Adobe"
   tmux split-window -v -l 30% -t "Obsidian vault" -c "$HOME"
-  tmux send-keys -t "Obsidian vault" "sync_project_timeline_entries.sh -n 5"
+  tmux send-keys -t "Obsidian vault" "start_daily_routine.sh"
   tmux select-pane -t "Obsidian vault":1.1
   tmux send-keys -t "Obsidian vault" "claude --enable-auto-mode" Enter
 
@@ -108,6 +108,9 @@ tmux-start() {
 
   tmux new-session -d -s "ACPC Content Explorer" -c "$HOME/code/acpc_content_explorer"
   tmux send-keys -t "ACPC Content Explorer" "iex -S mix phx.server" Enter
+
+  tmux new-session -d -s "Redis" -c "$HOME"
+  tmux send-keys -t "Redis" "docker rm `docker ps -a | grep myRedis | awk '{print $1}'`; docker run -d --name myRedis -p 6379:6379 redis" Enter
 
   tmux attach -t "General"
 }
@@ -129,7 +132,7 @@ tmux-claude() {
   tmux new-session -d -s "$session" -c "$dir"
   tmux split-window -v -l 30% -t "$session" -c "$dir"
   tmux select-pane -t "$session":1.1
-  tmux send-keys -t "$session":1.1 "claude --enable-auto-mode" Enter
+  tmux send-keys -t "$session":1.1 "claude" Enter
 
   if [ -n "$TMUX" ]; then
     tmux switch-client -t "$session"
