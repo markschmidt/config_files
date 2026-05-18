@@ -33,30 +33,7 @@ alias vim="nvim"
 
 
 # work-stuff
-alias bsc="~/code/servicecontainer/bin/debug build"
-alias msc="~/code/servicecontainer/bin/debug mock"
-alias bmsc="~/code/servicecontainer/bin/debug build mock"
-alias sc="~/code/servicecontainer/bin/debug"
-alias scmock="~/code/servicecontainer/bin/startMockServices"
-
-alias hub-kubectl='kubectl --context=ethos999prodor2 -n ns-team-sharedcloud--servicecontainer-deploy--16a9a14-0e7bd798'
-alias dev-irl1-kubectl='kubectl --context=ethos503stageirl1 -n ns-team-acp-cs-servicecontainer-dev'
-alias dev-va6-kubectl='kubectl --context=ethos503stageva6 -n ns-team-acp-cs-servicecontainer-dev'
-alias dev-va7-kubectl='kubectl --context=ethos05stageva7 -n ns-ethos-db454fa554f08bda1ce92d98f-dev09'
-alias stage-va7-kubectl='kubectl --context=ethos05stageva7 -n ns-ethos-db454fa554f08bda1ce92d9-stage09'
-alias stage-va6-kubectl='kubectl --context=ethos501stageva6 -n ns-team-acp-cs-servicecontainer-stage'
-alias stage-irl1-kubectl='kubectl --context=ethos501stageirl1 -n ns-team-acp-cs-servicecontainer-stage'
-alias stage-jpn3-kubectl='kubectl --context=ethos501stagejpn3 -n ns-team-acp-cs-servicecontainer-stage'
-alias prod-va6-kubectl='kubectl --context=ethos506prodva6 -n ns-team-acp-cs-servicecontainer-prod'
-alias prod-va6c2-kubectl='kubectl --context=ethos507prodva6 -n ns-team-acp-cs-servicecontainer-prod'
-alias prod-irl1-kubectl='kubectl --context=ethos506prodirl1 -n ns-team-acp-cs-servicecontainer-prod'
-alias prod-jpn3-kubectl='kubectl --context=ethos506prodjpn3-n ns-team-acp-cs-servicecontainer-prod'
-alias prod-va7-kubectl='kubectl --context=ethos05prodva7 -n ns-ethos-db454fa554f08bda1c-production09'
-
-alias  kcpd="kubectl --context=ethos501-stage-va6 -n ns-ethos-3cff76ba559dbdb4f59de6d8faf-dev"
-alias  kcps="kubectl --context=ethos501-stage-va6 -n ns-team-acp-communityplatform-stage"
-alias  kcpp="kubectl --context=ethos501-prod-va6  -n ns-ethos-3cff76ba559dbdb4f59de6d8fa-prod"
-
+### CP ###
 alias kubeCpDevFlex="KUBECONFIG=~/.kube/kubeconfig.yaml kubectl --context=ethos501-stage-va6 -n ns-team-acp-communityplatform-dev"
 alias kubeCpStageFlex="KUBECONFIG=~/.kube/kubeconfig.yaml kubectl --context=ethos501-stage-va6 -n ns-team-acp-communityplatform-stage"
 alias kubeCpProdFlex="KUBECONFIG=~/.kube/kubeconfig.yaml kubectl --context=ethos502-prod-va6 -n ns-team-acp-communityplatform-prod"
@@ -64,16 +41,45 @@ alias kubeCpProdFlex="KUBECONFIG=~/.kube/kubeconfig.yaml kubectl --context=ethos
 alias kubeCpENMProd="KUBECONFIG=~/.kube/kubeconfig.yaml kubectl --context=ethos502-prod-va6 -n ns-team-acp-communityplatform-enm-prod"
 alias kubeCpENMNonProd="KUBECONFIG=~/.kube/kubeconfig.yaml kubectl --context=ethos501-stage-va6 -n ns-team-acp-communityplatform-enm-nonprod"
 
-alias cp-klam-dev='klam configure-profile --name KLAM-CP-DEV --default true  --project CommunityPlatform --environment Dev --cloud aws --policy cp_administrator_and_support  --duration 1 && klam credentials -o aws -c'
-alias cp-klam-stage='klam configure-profile --name KLAM-CP-STAGE --default true  --project CommunityPlatform --environment Stage --cloud aws --policy cp_administrator_and_support  --duration 1 && klam credentials -o aws -c'
-alias cp-klam-prod='klam configure-profile --name KLAM-CP-PROD --default true  --project CommunityPlatform --environment Prod --cloud aws --policy cp_administrator_and_support  --duration 1 && klam credentials -o aws -c'
+alias cp-klam-dev='klam configure-profile --name KLAM-CP-DEV --default true  --project "ACPC - Community Platform" --environment Dev --cloud aws --policy cp_administrator_and_support  --duration 1 && klam credentials -o aws -c'
+alias cp-klam-stage='klam configure-profile --name KLAM-CP-STAGE --default true  --project "ACPC - Community Platform" --environment Stage --cloud aws --policy cp_administrator_and_support  --duration 1 && klam credentials -o aws -c'
+alias cp-klam-prod='klam configure-profile --name KLAM-CP-PROD --default true  --project "ACPC - Community Platform" --environment Prod --cloud aws --policy cp_administrator_and_support  --duration 1 && klam credentials -o aws -c'
+
+
+### SRS ###
+# Dev
+alias srs-kubectl-dev-irl1='kubectl --context=ethos502-stage-irl1 -n ns-team-entity-service-structuredresourcestore-dev'
+alias srs-kubectl-dev-jpn3='kubectl --context=ethos502-stage-jpn3 -n ns-team-entity-service-structuredresourcestore-dev'
+alias srs-kubectl-dev-va6='kubectl --context=ethos502-stage-va6 -n ns-team-entity-service-structuredresourcestore-dev'
+
+# Stage
+alias srs-kubectl-stage-irl1='kubectl --context=ethos502-stage-irl1 -n ns-team-entity-service-structuredresourcestore-stage'
+alias srs-kubectl-stage-jpn3='kubectl --context=ethos502-stage-jpn3 -n ns-team-entity-service-structuredresourcestore-stage'
+alias srs-kubectl-stage-va6='kubectl --context=ethos502-stage-va6 -n ns-team-entity-service-structuredresourcestore-stage'
+alias srs-kubectl-stage-va6c2='kubectl --context=ethos505-stage-va6 -n ns-team-entity-service-structuredresourcestore-stage'
+
+# Prod
+alias srs-kubectl-prod-deu1='kubectl --context=ethos490-prod-deu1 -n ns-team-entity-service-structuredresourcestore-prod'
+alias srs-kubectl-prod-irl1='kubectl --context=ethos503-prod-irl1 -n ns-team-entity-service-structuredresourcestore-prod'
+alias srs-kubectl-prod-jpn3='kubectl --context=ethos501-prod-jpn3 -n ns-team-entity-service-structuredresourcestore-prod'
+alias srs-kubectl-prod-va6='kubectl --context=ethos503-prod-va6 -n ns-team-entity-service-structuredresourcestore-prod'
+alias srs-kubectl-prod-va6c2='kubectl --context=ethos505-prod-va6 -n ns-team-entity-service-structuredresourcestore-prod'
+
+### PGC ###
+# Stage
+alias pgc-kubectl-stage-irl1='kubectl --context=ethos501-stage-irl1 -n ns-team-pgc--pgc-server-deploy--04c3180f--namespac-a1a31438'
+alias pgc-kubectl-stage-va6='kubectl --context=ethos503-stage-va6 -n ns-team-pgc--pgc-server-deploy--e24cfef5--namespac-d3ba1cb2'
+
+# Prod
+alias pgc-kubectl-prod-irl1='kubectl --context=ethos503-prod-irl1 -n ns-team-pgc--pgc-server-deploy--4cccc336--namespac-ac3a54da'
+alias pgc-kubectl-prod-va6='kubectl --context=ethos501-prod-va6 -n ns-team-pgc--pgc-server-deploy--8bb36b97--namespac-83386b6b'
+
 
 alias mi="mvn install"
 alias mci="mvn clean install"
 #alias mcist="mvn clean install -Dmaven.test.skip=true -DskipTests -Dfindbugs.skip=true -DskipTessa=true"
 alias mcist="mvn clean install -DskipTests"
 alias mcv="mvn clean verify"
-alias new_aws_instance="./deployr/amibaking/devtools/deployr-launch-instance --tag mschmidt --instance-type=c3.xlarge"
 
 alias start_portainer="docker run -d -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock portainer/portainer --no-auth && sleep 2 && open http://localhost:9000"
 
@@ -87,8 +93,21 @@ tmux-start() {
   fi
 
   tmux new-session -d -s "General" -c "$HOME"
+
   tmux new-session -d -s "Claude Usage Stats" -c "$HOME/code/claude-usage-stats"
   tmux send-keys -t "Claude Usage Stats" "./monthly-summary.sh" Enter
+
+  tmux new-session -d -s "Obsidian vault" -c "$HOME/Documents/Obsidian/Work-Adobe"
+  tmux split-window -v -l 30% -t "Obsidian vault" -c "$HOME"
+  tmux send-keys -t "Obsidian vault" "sync_project_timeline_entries.sh -n 5"
+  tmux select-pane -t "Obsidian vault":1.1
+  tmux send-keys -t "Obsidian vault" "claude --enable-auto-mode" Enter
+
+  tmux new-session -d -s "config_files" -c "$HOME/.config_files"
+  tmux send-keys -t "config_files" "vim +NERDTree" Enter
+
+  tmux new-session -d -s "ACPC Content Explorer" -c "$HOME/code/acpc_content_explorer"
+  tmux send-keys -t "ACPC Content Explorer" "iex -S mix phx.server" Enter
 
   tmux attach -t "General"
 }
