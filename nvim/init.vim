@@ -98,11 +98,7 @@ noremap <leader>c :cclose<CR>
 " Switch between the last two files
 nnoremap <leader><leader> <c-^>
 
-" Split navigation
-noremap <C-h> <C-w>h
-noremap <C-j> <C-w>j
-noremap <C-k> <C-w>k
-noremap <C-l> <C-w>l
+" Split navigation (handled by vim-tmux-navigator plugin)
 
 " disable arrow keys
 map <up> <nop>
@@ -139,7 +135,7 @@ endif
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
-let g:python3_host_prog = '/opt/homebrew/bin/python3' " -- Set python 3 provider
+let g:python3_host_prog = expand('~/.config/nvim/py3env/bin/python3')
 call plug#begin(data_dir . '/plugins')
 
 source ~/.config/nvim/plugins/airline.vim
@@ -160,6 +156,7 @@ source ~/.config/nvim/plugins/peekaboo.vim
 source ~/.config/nvim/plugins/polyglot.vim
 source ~/.config/nvim/plugins/splitjoin.vim
 source ~/.config/nvim/plugins/surround.vim
+Plug 'christoomey/vim-tmux-navigator'
 source ~/.config/nvim/plugins/targets.vim
 source ~/.config/nvim/plugins/textobj-xmlattr.vim
 source ~/.config/nvim/plugins/vim-test.vim
