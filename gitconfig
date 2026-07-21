@@ -15,7 +15,7 @@
         excludesfile = ~/.gitignore
         editor = vim
 [push]
-        default = upstream
+	default = current
 [apply]
         whitespace = nowarn
 [alias]
@@ -42,5 +42,11 @@
         path = ~/.gitconfig.local
 [pull]
 	ff = only
+	rebase = true
 [rerere]
 	enabled = true
+[github]
+	enterprise = git.corp.adobe.com
+	protocol = ssh
+[fetch]
+	prune = true
