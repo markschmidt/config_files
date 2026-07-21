@@ -6,3 +6,5 @@ tags
 *.local-ignore
 .beans/
 .beans.yml
+
+**/.claude/settings.local.json
