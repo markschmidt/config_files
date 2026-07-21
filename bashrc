@@ -124,7 +124,7 @@ if command -v /usr/libexec/java_home &> /dev/null && /usr/libexec/java_home -F &
   alias java21='export JAVA_HOME=$JAVA_21_HOME'
  
   # default to Java 11
-  #java11
+  export JAVA_HOME=$JAVA_17_HOME
 fi
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
