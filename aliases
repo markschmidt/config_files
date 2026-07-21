@@ -3,6 +3,8 @@ alias gadd="git add -u && git add . && git status"
 alias g="git"
 alias gci="git commit -m"
 alias gst="git status -s"
+alias gpush='git push -u origin $(git branch --show-current)'
+alias gpushf='git push --force-with-lease'
 alias gaci="gadd && gci"
 alias gitx='open -a GitX .'
 
@@ -64,6 +66,11 @@ alias srs-kubectl-prod-irl1='kubectl --context=ethos503-prod-irl1 -n ns-team-ent
 alias srs-kubectl-prod-jpn3='kubectl --context=ethos501-prod-jpn3 -n ns-team-entity-service-structuredresourcestore-prod'
 alias srs-kubectl-prod-va6='kubectl --context=ethos503-prod-va6 -n ns-team-entity-service-structuredresourcestore-prod'
 alias srs-kubectl-prod-va6c2='kubectl --context=ethos505-prod-va6 -n ns-team-entity-service-structuredresourcestore-prod'
+alias srs-kubectl-prod-aus3='kubectl --context=ethos491-prod-aus3 -n ns-team-entity-service-structuredresourcestore-prod'
+alias srs-kubectl-prod-can5='kubectl --context=ethos491-prod-can5 -n ns-team-entity-service-structuredresourcestore-prod'
+
+alias srs-worker-kubectl-prod-aus3='kubectl --context=ethos491-prod-aus3 -n ns-team-entity-service-srs-worker-prod'
+alias srs-worker-kubectl-prod-can5='kubectl --context=ethos491-prod-can5 -n ns-team-entity-service-srs-worker-prod'
 
 ### PGC ###
 # Stage
