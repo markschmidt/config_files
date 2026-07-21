@@ -12,3 +12,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 export PATH="$PATH:/Users/mschmidt/.lmstudio/bin"
 # End of LM Studio CLI section
 
+
+# >>> scout completion >>>
+command -v scout >/dev/null 2>&1 && eval "$(scout generate-shell-completion bash)"
+# <<< scout completion <<<
